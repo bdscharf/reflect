@@ -1,0 +1,19 @@
+{
+  "name": "mentalmindfulness",
+  "version": "1.0.0",
+  "description": "EECS330 project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdscharf/mentalmindfulness.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdscharf/mentalmindfulness/issues"
+  },
+  "homepage": "https://github.com/bdscharf/mentalmindfulness#readme"
+}
