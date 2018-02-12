@@ -1,0 +1,11 @@
+body {
+	background-color: white;
+}
+
+.head-bar {
+	width: auto;
+	height: 10%;
+	background-color: #e6ccff;
+	text-align: center;
+	font-weight: bold;
+}
