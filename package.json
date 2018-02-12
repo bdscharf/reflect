@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bdscharf/mentalmindfulness/issues"
   },
-  "homepage": "https://github.com/bdscharf/mentalmindfulness#readme"
+  "homepage": "https://github.com/bdscharf/mentalmindfulness#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
