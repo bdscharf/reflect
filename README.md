@@ -22,7 +22,7 @@ cd mentalmindfulness
 # Install dependencies
 npm install
 # Start server, use ^C to exit.
-node app.js
+npm start
 ```
 
 Note that you must have [Node.js](https://nodejs.org/en/) installed to use ```npm``` and to run the app.
