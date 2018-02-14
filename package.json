@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/bdscharf/mentalmindfulness#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "jquery": "^3.3.1"
   }
 }
