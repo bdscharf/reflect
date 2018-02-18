@@ -1,0 +1,15 @@
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+
+.button {
+  width: 30%;
+}
+
+.content {
+  justify-content: space-around;
+}

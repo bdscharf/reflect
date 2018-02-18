@@ -3,11 +3,7 @@ var router = express.Router();
 var path = require('path');
 
 router.get("/", (req, res, next) => {
-	res.sendFile(path.join(__dirname + '/views/login.html'));
-});
-
-router.post("/", (req, res, next) => {
-	res.redirect('/home');
+	res.sendFile(path.join(__dirname + '/views/home.html'));
 });
 
 module.exports = router;
