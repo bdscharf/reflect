@@ -1,0 +1,35 @@
+body *{
+	text-transform: none;
+}
+
+.about-info {
+	width: 70%;
+	margin: 100px auto;
+}
+
+.about-info-header {
+	font-size: 4.25em;
+	margin-bottom: 60px;
+}
+
+.about-info-task {
+	font-size: 2em;
+	margin-bottom: 25px;
+}
+
+.about-info-task i {
+	margin-right: 15px;
+	font-size: 1.2em;
+}
+
+.about-info-signup {
+	font-size: 1.9em;
+	 margin-bottom: 25px;
+	 text-align: center;
+	 border-top: 2px solid #000;
+	 padding-top: 40px;
+}
+
+.btn-success {
+	width: 200px;
+}

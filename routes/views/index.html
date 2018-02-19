@@ -3,22 +3,41 @@
   	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  		<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  		<!--<link rel="shortuct icon" type="image/png" href="/stylesheets/brain.ico"/>-->
+  		<title>Reflect</title>
   		<link rel="stylesheet" href="/stylesheets/base.css">
   		<link rel="stylesheet" href="/stylesheets/index.css">
-  		<title>Mental Mindfulness - Home</title>
 	</head>
 	<body>
-    	<div class="navbar">
-    		<h1>Mental Mindfulness</h1>
-  		</div>
-  		<div class="content">
-    		<a class="button" href="login">Login</a>
-    		<a class="button" href="signup">Sign Up</a>
-  		</div>
+		<nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-top">
+  			<ul class="navbar-nav">
+    			<li class="navbar-brand">
+      				<a class="navbar-brand" href="#">reflect</a>
+    			</li>
+    		</ul>
+    		<ul class="navbar-nav ml-auto">
+    			<form class="form-inline" action="/">
+    				<input class="form-control mr-sm-2" type="text" placeholder="username">
+    				<input class="form-control mr-sm-2" type="text" placeholder="password">
+    			</form>
+    			<a href="home"><button class="btn btn-outline-light" type="button">Log In</button></a>
+  			</ul>
+		</nav>
+		<div class="about-info">
+			<h2 class="about-info-header">Dive deep into patterns of thought and emotion with reflect.</h2>
+			<h3 class="about-info-task"><i class="fas fa-search"></i> Analyze specific events with your guided journal.</h3>
+			<h3 class="about-info-task"><i class="far fa-edit"></i>Document environmental factors that contribute to wellbeing.</h3>
+			<h3 class="about-info-task"><i class="fas fa-tasks"></i> Create goals to jumpstart a healthier life.</h3>
+			<h3 class="about-info-signup">New to reflect?</h3>
+			<div class="text-center">
+				<a href="signup"><button type="button" class="btn btn-success btn-lg">Sign Up</button></a>
+			</div>
+		</div>
     </body>
 </html>
