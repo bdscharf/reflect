@@ -1,28 +1,38 @@
-.form-feeling {
+.form-feeling:not(.question-box) {
 	padding-top: 100px;
 	font-size: 2em;
-	text-align: center;
-	vertical-align: middle;
+	text-align: left;
+	margin-left: 20px;
 }
 
-.form-feeling label, .form-feeling label input {
-	margin: 20px;
+.form-feeling label:not(.question) {
+	margin: 20px 0px;
+	width: 15%;
+	font-size: 0.75em;
 }
 
 .form-feeling label input {
 	vertical-align: middle;
+	margin-right: 8px;
 }
 
 .question {
-	width: 60%;
+	width: 75%;
 	display: inline-block;
-	height: 75px;
-	text-align: center;
+	margin-bottom: 20px;
+	text-align: left;
+	font-weight: bold;
 }
 
 .question-box {
-	width: 60%;
+	width: 75%;
+	height: 300px;
 	vertical-align: top;
-	height: 200px;
-	text-align: left;
+	padding: 8px;
+	margin-bottom: 40px;
+}
+
+.btn {
+	margin-bottom: 50px;
+	width: 20%;
 }
