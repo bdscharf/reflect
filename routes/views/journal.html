@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <title>Reflect</title>
   <link rel="stylesheet" href="/stylesheets/base.css">
-  <link rel="stylesheet" href="/stylesheets/home.css">
+  <link rel="stylesheet" href="/stylesheets/journal.css">
 </head>
 
 <body>
@@ -38,17 +38,20 @@
           </li>
         </ul>
     </nav>
-  <div class="content">
-    <h2>Welcome back, Alex</h2>
-    <br>
-    <h3>What would you like to do?</h3>
-    <div class="button-row">
-      <a class="button" href="journal">New Journal Entry</a>
-      <a class="button" href="#">Record Mood</a>
-    </div>
-    <br>
-    <p class="definition">reflect : re·flect  \ ri-ˈflekt \ verb \ : to think deeply or carefully about.</p>
-  </div>
-</body>
+    <form class="form-feeling" action="/"> 
+      How are you feeling in this moment?<br>
+      <labeL><input type="radio" name="feeling" value="Content"/>Content</labeL>
+      <label><input type="radio" name="feeling" value="Upset"/>Angry</label>
+      <label><input type="radio" name="feeling" value="Loved"/>Loved</label>
+      <label><input type="radio" name="feeling" value="Afraid"/>Afraid</label><br>
+      <label><input type="radio" name="feeling" value="Surprised"/>Surprised</label>
+      <label><input type="radio" name="feeling" value="Upset"/>Upset</label>
+      <label><input type="radio" name="feeling" value="Anxious"/>Anxious</label>
+      <label><input type="radio" name="feeling" value="Silly"/>Silly</label><br>
+      <label class="question">Now that you're here, what are your first thoughts about today? Are they mostly positive or negative?</label><br>
+      <input class="question-box" type="text" placeholder="Write as much, or as little, as you want"/>
 
+    </form>
+
+</body>
 </html>

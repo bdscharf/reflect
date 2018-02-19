@@ -1,0 +1,28 @@
+.form-feeling {
+	padding-top: 100px;
+	font-size: 2em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.form-feeling label, .form-feeling label input {
+	margin: 20px;
+}
+
+.form-feeling label input {
+	vertical-align: middle;
+}
+
+.question {
+	width: 60%;
+	display: inline-block;
+	height: 75px;
+	text-align: center;
+}
+
+.question-box {
+	width: 60%;
+	vertical-align: top;
+	height: 200px;
+	text-align: left;
+}
