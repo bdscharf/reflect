@@ -6,8 +6,8 @@ router.get("/", (req, res, next) => {
 	res.sendFile(path.join(__dirname + '/views/journal.html'));
 });
 
-router.post("/", (req, res, next) => {
-	res.redirect('/home');
-});
+//router.post("/", (req, res, next) => {
+//	res.redirect('/home');
+//});
 
 module.exports = router;
