@@ -1,7 +1,7 @@
 .signup-form {
 	width: 30%;
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 150px;
 	margin: 0 auto;
 	font-size: 2.5em;
 }
@@ -10,7 +10,6 @@
 	margin: 20px 0px;
 }
 
-.btn-success {
-	width: 430px;
-	text-align: center;
+.signup-form a button {
+	width: 100%;
 }

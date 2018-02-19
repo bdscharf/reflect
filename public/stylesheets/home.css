@@ -1,5 +1,10 @@
 .content {
   justify-content: space-around;
+  width: 43%;
+  margin: 0 auto;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .content h2 {
@@ -14,25 +19,33 @@
 	margin-top: 10px;
 }
 
+.button-row {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+}
+
 .button {
-	width: 220px;
-	height: 150px;
-	text-align: center;
+	width: 30.9%;
+	height: 125px;
+	text-align: left;
 	font-weight: bold;
 	background-color: var(--primary);
-	font-size: 1.5em;
+	font-size: 1.4em;
 	text-decoration: none;
 	color: #fff;
 	font-weight: lighter;
 	display: flex;
-	vertical-align: middle;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 30px;
 	display: inline-block;
-	padding-top: 11%;
 	border-radius: 25px;
+	vertical-align: middle;
+	text-align: center;
+	margin: 5% 1% 5% 1%;
+	padding-top: 8%;
 }
 
 .button:hover {
@@ -44,5 +57,5 @@
 .definition {
 	font-size: 1.25em;
 	font-style: italic;
-	margin-top: 150px;
+	margin-top: 25%;
 }
