@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-top">
         <ul class="navbar-nav">
           <li class="navbar-brand">
-              <a class="navbar-brand" href="#">reflect</a>
+              <a class="navbar-brand" href="home">reflect</a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -39,19 +39,26 @@
         </ul>
     </nav>
     <form class="form-feeling" action="/"> 
-      How are you feeling in this moment?<br>
-      <labeL><input type="radio" name="feeling" value="Content"/>Content</labeL>
-      <label><input type="radio" name="feeling" value="Upset"/>Angry</label>
-      <label><input type="radio" name="feeling" value="Loved"/>Loved</label>
-      <label><input type="radio" name="feeling" value="Afraid"/>Afraid</label><br>
-      <label><input type="radio" name="feeling" value="Surprised"/>Surprised</label>
-      <label><input type="radio" name="feeling" value="Upset"/>Upset</label>
+      <p class="question">How are you feeling in this moment?</p><br>
+      <labeL><input type="radio" name="feeling" value="Angry"/>Angry</labeL>
       <label><input type="radio" name="feeling" value="Anxious"/>Anxious</label>
-      <label><input type="radio" name="feeling" value="Silly"/>Silly</label><br>
-      <label class="question">Now that you're here, what are your first thoughts about today? Are they mostly positive or negative?</label><br>
-      <input class="question-box" type="text" placeholder="Write as much, or as little, as you want"/>
-
+      <label><input type="radio" name="feeling" value="Content"/>Content</label>
+      <label><input type="radio" name="feeling" value="Embarrassed"/>Embarrassed</label>
+      <label><input type="radio" name="feeling" value="Frustrated"/>Frustrated</label><br>
+      <label><input type="radio" name="feeling" value="Hopeful"/>Hopeful</label>
+      <label><input type="radio" name="feeling" value="Lonely"/>Lonely</label>
+      <label><input type="radio" name="feeling" value="Motivated"/>Motivated</label>
+      <label><input type="radio" name="feeling" value="Proud"/>Proud</label>
+      <label><input type="radio" name="feeling" value="Worthless"/>Worthless</label><br><br>
+      <p class="question">Now that you're here, what are your first thoughts about today? Are they mostly positive or negative?</p><br>
+      <textarea class="question-box"></textarea>
+      <p class="question">Explain why you're currently feeling what you marked.</p><br>
+      <textarea class="question-box"></textarea>
+      <p class="question">What would make today better?</p><br>
+      <textarea class="question-box"></textarea>
+      <p class="question">What stands out about today?</p><br>
+      <textarea class="question-box"></textarea><br>
+      <a href="home"><button class="btn btn-success btn-lg">Save</button></a>
     </form>
-
 </body>
 </html>

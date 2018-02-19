@@ -2,32 +2,42 @@
 <html lang="en">
 
 <head>
-  <title>Mental Mindfulness - Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <title>Reflect</title>
   <link rel="stylesheet" href="/stylesheets/base.css">
-  <link rel="stylesheet" href="/stylesheets/login.css">
-
+  <link rel="stylesheet" href="/stylesheets/signup.css">
 </head>
 
 <body>
-  <h1 class="navbar">Mental Mindfulness</h1>
-  <div class="content">
-    <form method="POST" action="/signup" class="login-form">
-      <div class="label-input">
-        <label for="name">Name</label>
-        <input class="form-control" id="name" type="text" placeholder="First Last" name="name">
-      </div>
-      <div class="label-input">
-        <label for="username">Username</label>
-        <input class="form-control" id="username" type="text" placeholder="Username" name="username">
-      </div>
-      <div class="label-input">
-        <label for="pword">Password</label>
-        <input class="form-control" id="password" type="password" placeholder="Password" name="password">
-      </div>
-      <button class="button" type="submit">Submit</button>
-    </form>
-  </div>
-
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-top">
+        <ul class="navbar-nav">
+          <li class="navbar-brand">
+              <a class="navbar-brand" href="#">reflect</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <form class="form-inline" action="/">
+            <input class="form-control mr-sm-2" type="text" placeholder="username">
+            <input class="form-control mr-sm-2" type="password" name="password" placeholder="password">
+          </form>
+          <a href="home"><button class="btn btn-outline-light" type="button">Log In</button></a>
+        </ul>
+    </nav>
+  <form class="signup-form">
+    Create your account <br>
+    <input class="form-control" type="text" placeholder="name">
+    <input class="form-control" type="text" placeholder="username">
+    <input class="form-control" type="password" name="password" placeholder="password - minimum 6 characters">
+    <input class="form-control" type="password" name="password" placeholder="retype password">
+    <a href="home"><button class="btn btn-success btn-lg" type="button">Create Account</button></a>
+  </form>
 </body>
 
 </html>
