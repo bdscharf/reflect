@@ -61,8 +61,8 @@ app.use(function(err, req, res, next) {
 /*
 	Postgres set-up and connection:
 */
-var dbExists = require("./lib/query_tools").dbExists;
-var setup = require("./lib/query_tools").setup;
+var dbExists = require("./lib/db_admin_tools").dbExists;
+var setup = require("./lib/db_admin_tools").setup;
 
 // Set up database if not done yet
 dbExists((response) => {
