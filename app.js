@@ -4,8 +4,11 @@ const 	express = require('express');
 		logger = require('morgan');
 		cookieParser = require('cookie-parser');
 		bodyParser = require('body-parser');
-		pg = require('pg');
-		startupSQL = fs.readFileSync('./sql/first_run.sql').toString();
+		
+// redis requirements
+var		session = require('express-session');
+		RedisStore = require('connect-redis')(session)
+		url = require('url');
 
 require('dotenv').load();
 const app = express();
@@ -25,13 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 */
 
 var index = require('./routes/index');
-var login = require('./routes/login');
 var signup = require('./routes/signup');
 var home = require('./routes/home');
 var journal = require('./routes/journal');
 
 app.use('/', index);
-app.use('/login', login);
 app.use('/signup', signup);
 app.use('/home', home);
 app.use('/journal', journal);
@@ -57,6 +58,49 @@ app.use(function(err, req, res, next) {
 	res.status(err.status || 500);
 	res.render('error');
 });
+
+/*
+	Redis set-up:
+	read more here:
+	http://blog.benhall.me.uk/2012/01/using-redis-and-redistogo-to-store-node-js-sessions-on-heroku/)
+	and
+	here:
+	https://devcenter.heroku.com/articles/redistogo#using-with-node-js
+*/
+
+var currentENV = process.env.NODE_ENV;
+
+if (currentENV === "development")
+{
+	app.use(session({ 		secret: "apassword", 
+                            store: new RedisStore({
+								host: "localhost",
+								port: 6379,
+							}),
+							resave: true,
+							saveUninitialized: false  
+					}));
+}
+else if (currentENV === "production")
+{
+	var redisUrl = url.parse(process.env.REDISTOGO_URL);
+	var redisAuth = redisUrl.auth.split(':');
+	
+	app.use(session({ 		secret: "apassword", 
+                           	store: new RedisStore({
+                           		host: redisUrl.hostname,
+                           		port: redisUrl.port,
+                           		db: redisAuth[0],
+                           		pass: redisAuth[1],
+                           	}),
+                           	resave: true,
+							saveUninitialized: false
+					}));
+}
+else
+{
+	console.log("ALERT: NODE_ENV is an invalid value.");
+}
 
 /*
 	Postgres set-up and connection:
