@@ -61,14 +61,16 @@ app.use(function(err, req, res, next) {
 /*
 	Postgres set-up and connection:
 */
-const initOptions = {};
-const pgp = require('pg-promise')(initOptions);
-const db = pgp(process.env.DATABASE_URL);
-// run on start-up
-db.any(startupSQL)
-    .catch((error) => {
-        // error
-        console.error(error);
-    });
+var dbExists = require("./lib/query_tools").dbExists;
+var setup = require("./lib/query_tools").setup;
+
+// Set up database if not done yet
+dbExists((response) => {
+	if (!(response))
+	{
+		console.log("ALERT: First run; setting up tables in database.")
+		setup(path.join(__dirname + "/sql/first_run.sql"));
+	}
+});
 
 module.exports = app;
