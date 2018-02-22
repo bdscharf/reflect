@@ -40,8 +40,8 @@ if (currentENV === "development")
 								host: "localhost",
 								port: 6379,
 							}),
-							resave: true,
-							saveUninitialized: true  
+							resave: false,
+							saveUninitialized: false  
 					}));
 }
 else if (currentENV === "production")
@@ -57,8 +57,8 @@ else if (currentENV === "production")
                            		db: redisAuth[0],
                            		pass: redisAuth[1],
                            	}),
-                           	resave: true,
-							saveUninitialized: true
+                           	resave: false,
+							saveUninitialized: false
 					}));
 }
 else
@@ -87,11 +87,13 @@ var index = require('./routes/index');
 var signup = require('./routes/signup');
 var home = require('./routes/home');
 var journal = require('./routes/journal');
+var logout = require('./routes/logout');
 
 app.use('/', index);
 app.use('/signup', signup);
 app.use('/home', home);
 app.use('/journal', journal);
+app.use('/logout', logout);
 
 /*
 	Express error-catching set-up:

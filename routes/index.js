@@ -15,8 +15,13 @@ router.post('/', (req, res, next) => {
 							(responseData) =>
 							{
 								// to see the contents of responseData, check variable 'send' in lines 69-72 of queries.js
+								// {loggedIn : false,
+								// usernameExists : true,
+								// username : "",
+								// userID : 0};
 								if (responseData.loggedIn)
 								{
+									req.session.user = {username : responseData.username};
 									res.redirect('/home');
 								}
 								else
