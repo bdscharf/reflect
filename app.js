@@ -10,6 +10,9 @@ var		session = require('express-session');
 		RedisStore = require('connect-redis')(session)
 		url = require('url');
 
+// postgres
+var queries = require(path.join(__dirname + '/lib/queries'));
+
 require('dotenv').load();
 const app = express();
 
@@ -105,15 +108,13 @@ app.use(function(err, req, res, next) {
 /*
 	Postgres set-up and connection:
 */
-var dbExists = require("./lib/db_admin_tools").dbExists;
-var setup = require("./lib/db_admin_tools").setup;
 
 // Set up database if not done yet
-dbExists((response) => {
+queries.dbExists((response) => {
 	if (!(response))
 	{
 		console.log("ALERT: First run; setting up tables in database.")
-		setup(path.join(__dirname + "/sql/first_run.sql"));
+		queries.setup(path.join(__dirname + "/lib/sql/first_run.sql"));
 	}
 });
 
