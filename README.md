@@ -34,9 +34,9 @@ iii) Add the connection url to the ```.env``` file in the project.
 
 iv) Start the Postgres server you just created.
 
-3) *[redis instructions will go here once fully implemented]*
+3) Install [redis](https://redis.io/) and start a server in the application folder using ```redis-server```
 
-4) Start up the server
+4) Start up the application server
 
 ```
 # Use ^C to exit.

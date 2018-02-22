@@ -71,39 +71,41 @@ app.use(function(err, req, res, next) {
 	https://devcenter.heroku.com/articles/redistogo#using-with-node-js
 */
 
-// var currentENV = process.env.NODE_ENV;
+var currentENV = process.env.NODE_ENV;
 
-// if (currentENV === "development")
-// {
-// 	app.use(session({ 		secret: "apassword", 
-//                             store: new RedisStore({
-// 								host: "localhost",
-// 								port: 6379,
-// 							}),
-// 							resave: true,
-// 							saveUninitialized: false  
-// 					}));
-// }
-// else if (currentENV === "production")
-// {
-// 	var redisUrl = url.parse(process.env.REDISTOGO_URL);
-// 	var redisAuth = redisUrl.auth.split(':');
+if (currentENV === "development")
+{
+	console.log("ALERT: Redis launched in development.")
+	app.use(session({ 		secret: "apassword", 
+                            store: new RedisStore({
+								host: "localhost",
+								port: 6379,
+							}),
+							resave: true,
+							saveUninitialized: false  
+					}));
+}
+else if (currentENV === "production")
+{
+	console.log("ALERT: Redis launched in production.")
+	var redisUrl = url.parse(process.env.REDISTOGO_URL);
+	var redisAuth = redisUrl.auth.split(':');
 	
-// 	app.use(session({ 		secret: "apassword", 
-//                            	store: new RedisStore({
-//                            		host: redisUrl.hostname,
-//                            		port: redisUrl.port,
-//                            		db: redisAuth[0],
-//                            		pass: redisAuth[1],
-//                            	}),
-//                            	resave: true,
-// 							saveUninitialized: false
-// 					}));
-// }
-// else
-// {
-// 	console.log("ALERT: NODE_ENV is an invalid value.");
-// }
+	app.use(session({ 		secret: "apassword", 
+                           	store: new RedisStore({
+                           		host: redisUrl.hostname,
+                           		port: redisUrl.port,
+                           		db: redisAuth[0],
+                           		pass: redisAuth[1],
+                           	}),
+                           	resave: true,
+							saveUninitialized: false
+					}));
+}
+else
+{
+	console.log("ALERT: NODE_ENV is an invalid value.");
+}
 
 /*
 	Postgres set-up and connection:
