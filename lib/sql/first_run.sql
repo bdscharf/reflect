@@ -14,7 +14,7 @@ CREATE TABLE mm_dev.users(
 	username VARCHAR,
 	password VARCHAR,
 	last_login timestamp without time zone,
-	CONSTRAINT uniq_email UNIQUE (email)
+	CONSTRAINT uniq_username UNIQUE (username)
 );
 
 CREATE TABLE mm_dev.user_data(

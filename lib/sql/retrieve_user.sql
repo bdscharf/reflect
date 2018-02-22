@@ -1,2 +1,2 @@
 SELECT * FROM mm_dev.users
-WHERE email = $1;
+WHERE username = $1;
