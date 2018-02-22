@@ -23,20 +23,20 @@
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-          <form class="form-inline" action="/">
-            <input class="form-control mr-sm-2" type="text" placeholder="username">
+          <form class="form-inline" method="POST" action="/">
+            <input class="form-control mr-sm-2" type="text" placeholder="username" name="username">
             <input class="form-control mr-sm-2" type="password" name="password" placeholder="password">
+            <button type="submit" class = "btn btn-outline-light">Log In</button>
           </form>
-          <a href="home"><button class="btn btn-outline-light" type="button">Log In</button></a>
         </ul>
     </nav>
-  <form class="signup-form">
+  <form class="signup-form" method = "POST" action = "/signup">
     Create your account <br>
-    <input class="form-control" type="text" placeholder="name">
-    <input class="form-control" type="text" placeholder="username">
+    <input class="form-control" type="text" placeholder="fullname" name = "fullname">
+    <input class="form-control" type="text" placeholder="username" name = "username">
     <input class="form-control" type="password" name="password" placeholder="password - minimum 6 characters">
-    <input class="form-control" type="password" name="password" placeholder="retype password">
-    <a href="home"><button class="btn btn-success btn-lg" type="button">Create Account</button></a>
+    <input class="form-control" type="password" placeholder="retype password">
+    <button type="submit" class = "btn btn-success btn-lg">Create Account></button>
   </form>
 </body>
 
