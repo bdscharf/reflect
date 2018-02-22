@@ -1,6 +1,6 @@
 INSERT INTO mm_dev.users(
 	fullname,
-	email,
+	username,
 	password,
 	last_login
 )

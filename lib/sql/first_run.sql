@@ -11,7 +11,7 @@ CREATE SEQUENCE mm_dev.user_id
 CREATE TABLE mm_dev.users(
 	user_id INT NOT NULL DEFAULT nextval('mm_dev.user_id'::regclass),
 	fullname VARCHAR,
-	email VARCHAR,
+	username VARCHAR,
 	password VARCHAR,
 	last_login timestamp without time zone,
 	CONSTRAINT uniq_email UNIQUE (email)
