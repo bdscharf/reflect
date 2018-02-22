@@ -14,6 +14,7 @@ router.post('/', (req, res, next) => {
 							pword,
 							(responseData) =>
 							{
+								// to see the contents of responseData, check variable 'send' in lines 69-72 of queries.js
 								if (responseData.loggedIn)
 								{
 									res.redirect('/home');
