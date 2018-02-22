@@ -1,7 +1,6 @@
 INSERT INTO mm_dev.users(
-	firstname,
-	lastname,
-	email,
+	fullname,
+	username,
 	password,
 	last_login
 )
@@ -9,6 +8,5 @@ VALUES (
 	$1,
 	$2,
 	$3,
-	$4,
-	timestamp
+	current_timestamp
 );
