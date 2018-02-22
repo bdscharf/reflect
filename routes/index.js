@@ -10,13 +10,19 @@ router.get('/',(req, res, next) => {
 router.post('/', (req, res, next) => {
 	var uname = req.body.username;
 	var pword = req.body.password;
-	queries.validateLogin({	"username": uname,
-							"password": pword}, 
-							(callback) =>
+	queries.validateLogin(	uname, 
+							pword,
+							(responseData) =>
 							{
-								console.log(callback);
-							})
-	res.redirect('/home');
+								if (responseData.loggedIn)
+								{
+									res.redirect('/home');
+								}
+								else
+								{
+									res.redirect('/');
+								}
+							});
 });
 
 module.exports = router;
