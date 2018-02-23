@@ -20,11 +20,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /*
 	Redis set-up:
-	read more here:
-	http://blog.benhall.me.uk/2012/01/using-redis-and-redistogo-to-store-node-js-sessions-on-heroku/)
-	and
-	here:
-	https://devcenter.heroku.com/articles/redistogo#using-with-node-js
 */
 var		session = require('express-session');
 		RedisStore = require('connect-redis')(session)
@@ -50,6 +45,7 @@ else if (currentENV === "production")
 	console.log("ALERT: Redis launched in production.")
 	var redisURL   = require("url").parse(process.env.REDISTOGO_URL);
 	var redisAuth = redisURL.auth.split(':');
+	const DB_NUMBER = 0;
 	// console.log(redisURL.hostname);
 	// console.log(redisURL.port);
 	// console.log(redisAuth[0]);
@@ -59,7 +55,7 @@ else if (currentENV === "production")
                            	store: new RedisStore({
                            		host: redisURL.hostname,
                            		port: redisURL.port,
-                           		db: 0,
+                           		db: DB_NUMBER,
                            		pass: redisAuth[1]
                            	}),
                            	resave: false,
