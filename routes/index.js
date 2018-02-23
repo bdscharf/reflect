@@ -21,8 +21,9 @@ router.post('/', (req, res, next) => {
 								// userID : 0};
 								if (responseData.loggedIn)
 								{
-									req.session.user = {};
-									req.session.username = responseData.username;
+									console.log(req.session);
+									// req.session.user = {};
+									// req.session.username = responseData.username;
 									res.redirect('/home');
 								}
 								else
