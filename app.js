@@ -35,10 +35,11 @@ var currentENV = process.env.NODE_ENV;
 if (currentENV === "development")
 {
 	console.log("ALERT: Redis launched in development.")
+
 	app.use(session({ 		secret: "apassword", 
                             store: new RedisStore({
 								host: "localhost",
-								port: 6379,
+								port: 6379
 							}),
 							resave: false,
 							saveUninitialized: false  
@@ -47,15 +48,17 @@ if (currentENV === "development")
 else if (currentENV === "production")
 {
 	console.log("ALERT: Redis launched in production.")
-	var redisUrl = url.parse(process.env.REDISTOGO_URL);
-	var redisAuth = redisUrl.auth.split(':');
+	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+	var redis = require("redis").createClient(rtg.port, rtg.hostname);
+
+	redis.auth(rtg.auth.split(":")[1]);
 	
 	app.use(session({ 		secret: "apassword", 
                            	store: new RedisStore({
-                           		host: redisUrl.hostname,
-                           		port: redisUrl.port,
-                           		db: redisAuth[0],
-                           		pass: redisAuth[1],
+                           		host: rtg.hostname,
+                           		port: rtg.port,
+                           		db: rtg.auth.split(":")[0],
+                           		pass: rtg.auth.split(":")[1]
                            	}),
                            	resave: false,
 							saveUninitialized: false
