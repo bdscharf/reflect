@@ -50,10 +50,10 @@ else if (currentENV === "production")
 	console.log("ALERT: Redis launched in production.")
 	var redisURL   = require("url").parse(process.env.REDISTOGO_URL);
 	var redisAuth = redisURL.auth.split(':');
-	console.log(redisURL.hostname);
-	console.log(redisURL.port);
-	console.log(redisAuth[0]);
-	console.log(redisAuth[1]);
+	// console.log(redisURL.hostname);
+	// console.log(redisURL.port);
+	// console.log(redisAuth[0]);
+	// console.log(redisAuth[1]);
 	
 	app.use(session({ 		secret: "apassword", 
                            	store: new RedisStore({
