@@ -48,17 +48,15 @@ if (currentENV === "development")
 else if (currentENV === "production")
 {
 	console.log("ALERT: Redis launched in production.")
-	var rtg   = require("url").parse(process.env.REDISTOGO_URL);
-	var redis = require("redis").createClient(rtg.port, rtg.hostname);
-
-	redis.auth(rtg.auth.split(":")[1]);
+	var redisURL   = require("url").parse(process.env.REDISTOGO_URL);
+	var redisAuth = redisURL.auth.split(':');
 	
 	app.use(session({ 		secret: "apassword", 
                            	store: new RedisStore({
-                           		host: rtg.hostname,
-                           		port: rtg.port,
-                           		db: rtg.auth.split(":")[0],
-                           		pass: rtg.auth.split(":")[1]
+                           		host: redisURL.hostname,
+                           		port: redisURL.port,
+                           		db: redisAuth[0],
+                           		pass: redisAuth[1]
                            	}),
                            	resave: false,
 							saveUninitialized: false
