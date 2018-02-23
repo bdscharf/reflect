@@ -59,7 +59,7 @@ else if (currentENV === "production")
                            	store: new RedisStore({
                            		host: redisURL.hostname,
                            		port: redisURL.port,
-                           		db: redisAuth[0],
+                           		db: 0,
                            		pass: redisAuth[1]
                            	}),
                            	resave: false,
