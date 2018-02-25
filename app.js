@@ -85,12 +85,14 @@ var signup = require('./routes/signup');
 var home = require('./routes/home');
 var journal = require('./routes/journal');
 var logout = require('./routes/logout');
+var history = require('./routes/history');
 
 app.use('/', index);
 app.use('/signup', signup);
 app.use('/home', home);
 app.use('/journal', journal);
 app.use('/logout', logout);
+app.use('/history', history);
 
 /*
 	Express error-catching set-up:
