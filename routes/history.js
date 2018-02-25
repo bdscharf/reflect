@@ -9,7 +9,14 @@ router.get("/", (req, res, next) => {
 		res.sendFile(path.join(__dirname + '/views/history.html'));
 		queries.getData(req.session.username, 'journalentry', (userData) =>
 		{
-			console.log(response);
+			if (userData)
+			{
+				console.log(userData);
+			}
+			else
+			{
+				console.log("ALERT: No user data, or failure within database...")
+			}
 		});
 	}
 	else
