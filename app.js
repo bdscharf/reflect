@@ -31,13 +31,13 @@ if (currentENV === "development")
 {
 	console.log("ALERT: Redis launched in development.")
 
-	app.use(session({ 		secret: "apassword", 
+	app.use(session({ 		secret: "apassword",
                             store: new RedisStore({
 								host: "localhost",
 								port: 6379
 							}),
 							resave: false,
-							saveUninitialized: false  
+							saveUninitialized: false
 					}));
 }
 else if (currentENV === "production")
@@ -46,8 +46,7 @@ else if (currentENV === "production")
 	var redisURL   = require("url").parse(process.env.REDISTOGO_URL);
 	var redisAuth = redisURL.auth.split(':');
 	const DB_NUMBER = 0;
-	
-	app.use(session({ 		secret: "apassword", 
+	app.use(session({ 		secret: "apassword",
                            	store: new RedisStore({
                            		host: redisURL.hostname,
                            		port: redisURL.port,

@@ -38,9 +38,9 @@
           </li>
         </ul>
     </nav>
-    <form class="form-feeling" method="POST" action="/journal"> 
+    <form class="form-feeling" method="POST" action="/journal">
       <p class="question">How are you feeling in this moment?</p><br>
-      <label><input type="checkbox" name="feeling" value="Angry"/>Angry</label>
+      <label><input type="checkbox" name="feeling" value="Angry" required/>Angry</label>
       <label><input type="checkbox" name="feeling" value="Anxious"/>Anxious</label>
       <label><input type="checkbox" name="feeling" value="Content"/>Content</label>
       <label><input type="checkbox" name="feeling" value="Embarrassed"/>Embarrassed</label>
@@ -51,13 +51,13 @@
       <label><input type="checkbox" name="feeling" value="Proud"/>Proud</label>
       <label><input type="checkbox" name="feeling" value="Worthless"/>Worthless</label><br><br>
       <p class="question">Now that you're here, what are your first thoughts about today? Are they mostly positive or negative?</p><br>
-      <textarea name="firstthoughts" class="question-box"></textarea>
+      <textarea name="firstthoughts" class="question-box" required></textarea>
       <p class="question">Explain why you're currently feeling what you marked.</p><br>
-      <textarea name="whyfeeling" class="question-box"></textarea>
+      <textarea name="whyfeeling" class="question-box" required></textarea>
       <p class="question">What would make today better?</p><br>
-      <textarea name="whatbetter" class="question-box"></textarea>
+      <textarea name="whatbetter" class="question-box" required></textarea>
       <p class="question">What stands out about today?</p><br>
-      <textarea name="standout" class="question-box"></textarea><br>
+      <textarea name="standout" class="question-box" required></textarea><br>
       <button type="submit" class="btn btn-success btn-lg">Save</button>
     </form>
 </body>
