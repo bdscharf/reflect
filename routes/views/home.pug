@@ -11,7 +11,7 @@ html(lang='en')
         link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
         title Reflect
         link(rel='stylesheet', href='/stylesheets/base.css')
-        link(rel='stylesheet', href='/stylesheets/home.css')
+        link(rel='stylesheet', href='/stylesheets/history.css')
     body
         nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
             ul.navbar-nav
@@ -19,7 +19,7 @@ html(lang='en')
                     a.navbar-brand(href='/home') reflect
             ul.navbar-nav.ml-auto
                 li.nav-item
-                    a.nav-link(href='/history') Past Posts
+                    a.nav-link(href='history') Past Posts
                 li.nav-item
                     a.nav-link(href='#') Goals
                 li.nav-item.dropdown
@@ -32,8 +32,8 @@ html(lang='en')
             br
             h3 What would you like to do?
             .button-row
-                a.button(href='journal') New Journal Entry
-                a.button(href='#') Record Mood
+                a.button(href='/journal') New Journal Entry
+                a.button(href='/mood') Record Mood
                 a.button(href='#') Set a Goal
             br
             p.definition reflect : re·flect  \ ri-ˈflekt \ verb \ : to think deeply or carefully about.

@@ -21,7 +21,6 @@ router.post("/", (req, res, next) => {
 //  		whyfeeling: '',
 //  		whatbetter: '',
 //  		standout: '' }
-	console.log(req.body);
 	var dtype = "journalentry";
 	queries.writeData(req.session.username, dtype, req.body, (success) =>
 	{
