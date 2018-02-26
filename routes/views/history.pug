@@ -7,8 +7,7 @@ html(lang='en')
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
         script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
-        script(src='/scripts/history.js')
-        script(src='/scripts/jquery.dynatable.js')
+        //script(src='/scripts/jquery.dynatable.js')
         link(href='https://use.fontawesome.com/releases/v5.0.6/css/all.css', rel='stylesheet')
         link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
         // <link rel="shortuct icon" type="image/png" href="/stylesheets/brain.ico"/>
@@ -26,7 +25,19 @@ html(lang='en')
                 li.nav-item
                     a.nav-link(href='#') Goals
                 li.nav-item.dropdown
-                    a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') Alex
+                    a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') #{user.username}
                     .dropdown-menu.dropdown-menu-right
                         a.dropdown-item(href='#') Profile Settings
                         a.dropdown-item(href='/logout') Log Out
+                        a.dropdown-item(href='#')
+
+        table
+            thead
+                tr
+                    th Created At:
+                    th Post Information:
+            tbody
+                td
+                    for post in postCollection
+                        td=post.created_at
+                        td=post.data
