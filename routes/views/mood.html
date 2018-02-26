@@ -10,9 +10,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!--<link rel="shortuct icon" type="image/png" href="/stylesheets/brain.ico"/>-->
   <title>Reflect</title>
   <link rel="stylesheet" href="/stylesheets/base.css">
-  <link rel="stylesheet" href="/stylesheets/home.css">
+  <link rel="stylesheet" href="/stylesheets/journal.css">
 </head>
 
 <body>
@@ -38,18 +39,22 @@
           </li>
         </ul>
     </nav>
-  <div class="content">
-    <h2 id="welcome-back">Welcome back, Alex</h2>
-    <br>
-    <h3>What would you like to do?</h3>
-    <div class="button-row">
-      <a class="button" href="journal">New Journal Entry</a>
-      <a class="button" href="#">Record Mood</a>
-      <a class="button" href="#">Set a Goal</a>
-    </div>
-    <br>
-    <p class="definition">reflect : re·flect  \ ri-ˈflekt \ verb \ : to think deeply or carefully about.</p>
+    <div class="form-content">
+    <form class="form-feeling" action="/home">
+      <p class="title">Mood Tracker</p>
+      <p class="directions">Fill in all fields.</p><br>
+      <p class="question">Sum up today in 5 words or less:</p><br>
+      <textarea class="question-box" required></textarea>
+      <p class="question">How many hours of sleep did you get last night?</p><br>
+      <textarea class="question-box" required></textarea>
+      <p class="question">How would you describe your diet today?</p><br>
+      <textarea class="question-box" required></textarea>
+      <p class="question">Did you exercise today? If yes, for how long?</p><br>
+      <textarea class="question-box" required></textarea><br>
+      <p class="question">Describe today's leisure time. What did you spend it doing?</p><br>
+      <textarea class="question-box" required></textarea><br>
+      <button type="submit" class="btn btn-success btn-lg">Save</button>
+    </form>
   </div>
 </body>
-
 </html>

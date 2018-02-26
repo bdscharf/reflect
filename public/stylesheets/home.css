@@ -11,7 +11,7 @@
 	border-bottom: 2px solid #000;
 	padding-bottom: 10px;
 	font-size: 5.25vw;
-	padding-top: 200px;
+	padding-top: 175px;
 }
 
 .content h3 {
@@ -22,15 +22,13 @@
 .button-row {
 	width: 100%;
 	padding: 0;
-	padding-left: 7.5%;
+	padding-left: 1.5vw;
 	margin: 0;
 	text-align: left;
 }
 
 .button {
-	/*width: 30.9%;
-	height: 125px;*/
-	width: 13.3vw;
+	width: 14.5vw;
 	height: 15vh;
 	text-align: left;
 	font-weight: bold;

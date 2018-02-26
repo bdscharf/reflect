@@ -1,38 +1,61 @@
 .form-feeling:not(.question-box) {
 	padding-top: 100px;
-	font-size: 2em;
+	font-size: 1.75em;
 	text-align: left;
 	margin-left: 20px;
 }
 
 .form-feeling label:not(.question) {
-	margin: 20px 0px;
-	width: 15%;
+	margin: 10px 0px;
+	width: 10vw;
 	font-size: 0.75em;
+}
+
+.form-content {
+	margin: 0 auto;
+	width: 55vw;
 }
 
 .form-feeling label input {
 	vertical-align: middle;
-	margin-right: 8px;
+	margin-right: 8px; 
 }
 
 .question {
-	width: 75%;
+	width: 55vw;
 	display: inline-block;
-	margin-bottom: 20px;
+	margin-bottom: 2vh;
+	margin-top: 3vh;
 	text-align: left;
 	font-weight: bold;
 }
 
 .question-box {
-	width: 75%;
-	height: 300px;
+	width: 55vw;
+	height: 12vh;
 	vertical-align: top;
+	font-size: 0.75em;
 	padding: 8px;
 	margin-bottom: 40px;
+	border-radius: 10px;
 }
 
 .btn {
 	margin-bottom: 50px;
 	width: 20%;
+}
+
+.title {
+	margin-top: 50px;
+	font-weight: bold;
+	font-size: 4vw;
+	width: 55vw;
+	border-bottom: 1px solid #000;
+	margin-bottom: 1vh;
+}
+
+.directions {
+	margin-top: 0;
+	font-size: 1.5vw;
+	font-style: italic;
 }

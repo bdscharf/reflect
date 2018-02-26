@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
+        link(href='https://use.fontawesome.com/releases/v5.0.6/css/all.css', rel='stylesheet')
+        link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
+        title Reflect
+        link(rel='stylesheet', href='/stylesheets/base.css')
+        link(rel='stylesheet', href='/stylesheets/home.css')
+    body
+        nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
+            ul.navbar-nav
+                li.navbar-brand
+                    a.navbar-brand(href='home') reflect
+            ul.navbar-nav.ml-auto
+                li.nav-item
+                    a.nav-link(href='/history') Past Posts
+                li.nav-item
+                    a.nav-link(href='#') Goals
+                li.nav-item.dropdown
+                    a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') Alex
+                    .dropdown-menu.dropdown-menu-right
+                        a.dropdown-item(href='#') Profile Settings
+                        a.dropdown-item(href='/logout') Log Out
+        .content
+            h2#welcome-back Welcome back, Alex
+            br
+            h3 What would you like to do?
+            .button-row
+                a.button(href='journal') New Journal Entry
+                a.button(href='#') Record Mood
+                a.button(href='#') Set a Goal
+            br
+            p.definition reflect : re·flect  \ ri-ˈflekt \ verb \ : to think deeply or carefully about.

@@ -4,7 +4,7 @@ body *{
 
 .about-info {
 	width: 70%;
-	margin: 150px auto 0 auto;
+	margin: 175px auto 0 auto;
 }
 
 .about-info-header {
@@ -30,10 +30,18 @@ body *{
 	 padding-top: 40px;
 }
 
-/*.btn-success {
-	width: 200px;
-}*/
-
-.new-user-info button {
+.new-info button {
 	width: 15vw;
 }
+
+#failMsg {
+	color: #fff;
+	margin: auto;
+	padding-right: 5px;
+	font-style: italic;
+	font-weight: bold;
+}
+
+
+
+
