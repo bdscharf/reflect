@@ -4,9 +4,9 @@ var path = require('path');
 var queries = require(path.join('../lib/queries'));
 
 router.get("/", (req, res, next) => {
-	if (req.session.user)
+	if (req.session.username)
 	{
-		res.sendFile(path.join(__dirname + '/views/history.html'));
+		res.render('history');
 		queries.getData(req.session.username, 'journalentry', (userData) =>
 		{
 			if (userData)
@@ -15,7 +15,7 @@ router.get("/", (req, res, next) => {
 			}
 			else
 			{
-				console.log("ALERT: No user data, or failure within database...")
+				console.log("ALERT: No user data retrieved.")
 			}
 		});
 	}
