@@ -10,6 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <!--<link rel="shortuct icon" type="image/png" href="/stylesheets/brain.ico"/>-->
   <title>Reflect</title>
   <link rel="stylesheet" href="/stylesheets/base.css">
   <link rel="stylesheet" href="/stylesheets/journal.css">
@@ -39,28 +40,19 @@
         </ul>
     </nav>
     <div class="form-content">
-    <form class="form-feeling" method="POST" action="/journal">
-      <p class="title">New Journal Entry</p>
-      <p class="directions">Fill in all fields. Write as much as you'd like.</p><br>
-      <p class="question">How are you feeling in this moment?</p><br>
-      <label><input type="checkbox" name="feeling" value="Angry" required/>Angry</label>
-      <label><input type="checkbox" name="feeling" value="Anxious"/>Anxious</label>
-      <label><input type="checkbox" name="feeling" value="Content"/>Content</label>
-      <label><input type="checkbox" name="feeling" value="Embarrassed"/>Embarrassed</label>
-      <label><input type="checkbox" name="feeling" value="Frustrated"/>Frustrated</label><br>
-      <label><input type="checkbox" name="feeling" value="Hopeful"/>Hopeful</label>
-      <label><input type="checkbox" name="feeling" value="Lonely"/>Lonely</label>
-      <label><input type="checkbox" name="feeling" value="Motivated"/>Motivated</label>
-      <label><input type="checkbox" name="feeling" value="Proud"/>Proud</label>
-      <label><input type="checkbox" name="feeling" value="Worthless"/>Worthless</label><br><br>
-      <p class="question">What are your first thoughts about today? Are they mostly positive or negative?</p><br>
-      <textarea name="firstthoughts" class="question-box" required></textarea>
-      <p class="question">Explain why you're currently feeling what you marked.</p><br>
-      <textarea name="whyfeeling" class="question-box" required></textarea>
-      <p class="question">What would make today better?</p><br>
-      <textarea name="whatbetter" class="question-box" required></textarea>
-      <p class="question">What stands out about today?</p><br>
-      <textarea name="standout" class="question-box" required></textarea><br>
+    <form class="form-feeling" action="/home">
+      <p class="title">Mood Tracker</p>
+      <p class="directions">Fill in all fields.</p><br>
+      <p class="question">Sum up today in 5 words or less:</p><br>
+      <textarea class="question-box" required></textarea>
+      <p class="question">How many hours of sleep did you get last night?</p><br>
+      <textarea class="question-box" required></textarea>
+      <p class="question">How would you describe your diet today?</p><br>
+      <textarea class="question-box" required></textarea>
+      <p class="question">Did you exercise today? If yes, for how long?</p><br>
+      <textarea class="question-box" required></textarea><br>
+      <p class="question">Describe today's leisure time. What did you spend it doing?</p><br>
+      <textarea class="question-box" required></textarea><br>
       <button type="submit" class="btn btn-success btn-lg">Save</button>
     </form>
   </div>
