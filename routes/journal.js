@@ -6,7 +6,7 @@ var queries = require(path.join('../lib/queries'));
 router.get("/", (req, res, next) => {
 	if (req.session.loggedIn)
 	{
-		res.sendFile(path.join(__dirname + '/views/journal.html'));
+		res.render('journal', {user : req.session});
 	}
 	else
 	{
