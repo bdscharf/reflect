@@ -38,9 +38,9 @@
           </li>
         </ul>
     </nav>
-    <form class="form-feeling" action="/"> 
+    <form class="form-feeling" action="/">
       <p class="question">How are you feeling in this moment?</p><br>
-      <labeL><input type="radio" name="feeling" value="Angry"/>Angry</labeL>
+      <labeL><input type="radio" name="feeling" value="Angry" required/>Angry</labeL>
       <label><input type="radio" name="feeling" value="Anxious"/>Anxious</label>
       <label><input type="radio" name="feeling" value="Content"/>Content</label>
       <label><input type="radio" name="feeling" value="Embarrassed"/>Embarrassed</label>
@@ -51,13 +51,13 @@
       <label><input type="radio" name="feeling" value="Proud"/>Proud</label>
       <label><input type="radio" name="feeling" value="Worthless"/>Worthless</label><br><br>
       <p class="question">Now that you're here, what are your first thoughts about today? Are they mostly positive or negative?</p><br>
-      <textarea class="question-box"></textarea>
+      <textarea class="question-box" required></textarea>
       <p class="question">Explain why you're currently feeling what you marked.</p><br>
-      <textarea class="question-box"></textarea>
+      <textarea class="question-box" required></textarea>
       <p class="question">What would make today better?</p><br>
-      <textarea class="question-box"></textarea>
+      <textarea class="question-box" required></textarea>
       <p class="question">What stands out about today?</p><br>
-      <textarea class="question-box"></textarea><br>
+      <textarea class="question-box" required></textarea><br>
       <a href="home"><button class="btn btn-success btn-lg">Save</button></a>
     </form>
 </body>

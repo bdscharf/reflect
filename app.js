@@ -31,13 +31,13 @@ if (currentENV === "development")
 {
 	console.log("ALERT: Redis launched in development.")
 
-	app.use(session({ 		secret: "apassword", 
+	app.use(session({ 		secret: "apassword",
                             store: new RedisStore({
 								host: "localhost",
 								port: 6379
 							}),
 							resave: false,
-							saveUninitialized: false  
+							saveUninitialized: false
 					}));
 }
 else if (currentENV === "production")
@@ -50,8 +50,8 @@ else if (currentENV === "production")
 	// console.log(redisURL.port);
 	// console.log(redisAuth[0]);
 	// console.log(redisAuth[1]);
-	
-	app.use(session({ 		secret: "apassword", 
+
+	app.use(session({ 		secret: "apassword",
                            	store: new RedisStore({
                            		host: redisURL.hostname,
                            		port: redisURL.port,
