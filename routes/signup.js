@@ -17,7 +17,9 @@ router.post("/", (req, res, next) => {
 		queries.addUser(data, (success) => {
 			if (success)
 			{
-				res.redirect('/');
+				req.session.username = data.username;
+				req.session.loggedIn = true;
+				res.redirect('/home');
 			}
 			else
 			{

@@ -18,7 +18,8 @@ CREATE TABLE mm_dev.users(
 );
 
 CREATE TABLE mm_dev.user_data(
-	user_id INT NOT NULL,
+	username VARCHAR NOT NULL,
 	created_at timestamp with time zone,
+	type VARCHAR,
 	data JSONB
 );

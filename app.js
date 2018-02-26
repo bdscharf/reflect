@@ -46,10 +46,6 @@ else if (currentENV === "production")
 	var redisURL   = require("url").parse(process.env.REDISTOGO_URL);
 	var redisAuth = redisURL.auth.split(':');
 	const DB_NUMBER = 0;
-	// console.log(redisURL.hostname);
-	// console.log(redisURL.port);
-	// console.log(redisAuth[0]);
-	// console.log(redisAuth[1]);
 	
 	app.use(session({ 		secret: "apassword", 
                            	store: new RedisStore({
@@ -89,12 +85,14 @@ var signup = require('./routes/signup');
 var home = require('./routes/home');
 var journal = require('./routes/journal');
 var logout = require('./routes/logout');
+var history = require('./routes/history');
 
 app.use('/', index);
 app.use('/signup', signup);
 app.use('/home', home);
 app.use('/journal', journal);
 app.use('/logout', logout);
+app.use('/history', history);
 
 /*
 	Express error-catching set-up:
