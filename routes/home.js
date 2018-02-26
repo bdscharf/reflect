@@ -6,7 +6,7 @@ var queries = require(path.join('../lib/queries'));
 router.get("/", (req, res, next) => {
 	if (req.session.loggedIn)
 	{
-		res.render('home');
+		res.render('home', {user : req.session});
 	}
 	else
 	{

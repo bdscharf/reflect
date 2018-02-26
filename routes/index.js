@@ -19,8 +19,8 @@ router.post('/', (req, res, next) => {
       // username : "",
       // userID : 0};
       if (responseData.loggedIn) {
-        req.session.user = {};
         req.session.username = responseData.username;
+        req.session.loggedIn = true;
         res.redirect('/home');
       } else {
         delete req.session;
