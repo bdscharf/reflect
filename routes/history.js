@@ -8,18 +8,10 @@ router.get("/", (req, res, next) => {
 	{
 		queries.getData(req.session.username, 'journalentry', (userData) =>
 		{
-			if (userData.length != 0)
-			{
-				res.render('history',
-				{
-					"user" : req.session,
-					"postCollection" : userData
-				});
-			}
-			else
-			{
-				res.redirect('/home');
-			}
+			res.render('history', {
+				user : req.session,
+				posts : userData
+			});
 		});
 	}
 	else
