@@ -6,17 +6,12 @@ var queries = require(path.join('../lib/queries'));
 router.get("/", (req, res, next) => {
 	if (req.session.username)
 	{
-		res.render('history');
-		queries.getData(req.session.username, 'journalentry', (userData) =>
+		queries.getJournal(req.session.username, (userData) =>
 		{
-			if (userData)
-			{
-				console.log(userData);
-			}
-			else
-			{
-				console.log("ALERT: No user data retrieved.")
-			}
+			res.render('history', {
+				user : req.session,
+				posts : userData
+			});
 		});
 	}
 	else

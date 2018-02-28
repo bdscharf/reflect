@@ -59,3 +59,11 @@
 	font-size: 1.5vw;
 	font-style: italic;
 }
+
+#failMsg {
+	color: red;
+	margin: auto;
+	padding-right: 5px;
+	font-style: italic;
+	font-weight: bold;
+}

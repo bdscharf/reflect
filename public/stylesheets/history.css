@@ -1,5 +1,7 @@
 .post-table {
-	padding-top: 100px;
-	width: 90%;
+	margin-top: 100px;
+	width: 100%;
 	text-align: center;
+	border-style: dotted;
+	padding:0 15px 0 15px;
 }
