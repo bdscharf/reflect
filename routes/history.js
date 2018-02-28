@@ -6,7 +6,7 @@ var queries = require(path.join('../lib/queries'));
 router.get("/", (req, res, next) => {
 	if (req.session.username)
 	{
-		queries.getData(req.session.username, 'journalentry', (userData) =>
+		queries.getJournal(req.session.username, (userData) =>
 		{
 			res.render('history', {
 				user : req.session,
