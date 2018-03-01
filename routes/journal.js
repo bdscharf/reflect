@@ -4,7 +4,7 @@ var path = require('path');
 var queries = require(path.join('../lib/queries'));
 
 router.get("/", (req, res, next) => {
-	if (req.session.loggedIn)
+	if (req.session && req.session.loggedIn)
 	{
 		res.render('journal', {user : req.session});
 	}
@@ -26,7 +26,6 @@ router.post("/", (req, res, next) => {
 		var dtype = "journalentry";
 		queries.writeData(req.session.username, dtype, req.body, (success) =>
 		{
-			console.log(success);
 			if (!success)
 			{
 				console.log("ALERT: Failed to write new journal entry.");

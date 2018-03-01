@@ -4,7 +4,7 @@ var path = require('path');
 var queries = require(path.join('../lib/queries'));
 
 router.get("/", (req, res, next) => {
-	if (req.session.username)
+	if (req.session && req.session.loggedIn)
 	{
 		queries.getJournal(req.session.username, (userData) =>
 		{
