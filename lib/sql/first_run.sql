@@ -27,6 +27,7 @@ CREATE TABLE mm_dev.user_data(
 CREATE TABLE mm_dev.goals(
 	username VARCHAR NOT NULL,
 	created_at timestamp with time zone,
+	duration VARCHAR,
 	in_progress boolean,
 	goal VARCHAR
 );
