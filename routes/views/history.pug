@@ -31,24 +31,25 @@ html(lang='en')
       table
         tbody
             tr
-                td
-                    strong Created At:
-                td
-                    strong Feelings:
-                td
+                td.date.title
+                    strong Date Posted:
+                td.title
+                    strong Feeling(s):
+                td.thoughts.title
                     strong First Thoughts:
-                td
-                    strong Explanation of Feelings:
-                td
-                    strong Ideas for Improvement:
-                td
-                    strong Stand-out Moments:
+                //td
+                //    strong Explanation of Feelings:
+                //td
+                //    strong Ideas for Improvement:
+                //td
+                //    strong Stand-out Moments:
 
             each post in posts
                 tr
-                    td #{post.createdAt}
+                    td 
+                        a(href="#") #{post.createdAt}
                     td #{post.feelings}
                     td #{post.firstThought}
-                    td #{post.whyFeel}
-                    td #{post.better}
-                    td #{post.standsOut}
+                //    td #{post.whyFeel}
+                //    td #{post.better}
+                //    td #{post.standsOut}

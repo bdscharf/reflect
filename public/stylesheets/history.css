@@ -1,7 +1,29 @@
 .post-table {
-	margin-top: 100px;
-	width: 100%;
+	padding-top: 100px;
+	width: 90%;
 	text-align: center;
 	border-style: dotted;
-	padding:0 15px 0 15px;
+	margin: 0 auto;
+}
+
+.post-table table, .post-table td {
+	border: 1.5px solid #000;
+	padding: 10px;
+}
+
+.thoughts {
+	width: 66%;
+}
+
+.date {
+	width: 22%;
+}
+
+.date-data {
+	padding-top: 2px;
+}
+
+.title {
+	color: #fff;
+	background-color: #000;
 }
