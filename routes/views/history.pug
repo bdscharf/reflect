@@ -37,12 +37,12 @@ html(lang='en')
                     strong Feeling(s):
                 td.thoughts.title
                     strong First Thoughts:
-                //td
-                //    strong Explanation of Feelings:
-                //td
-                //    strong Ideas for Improvement:
-                //td
-                //    strong Stand-out Moments:
+                td.title
+                    strong Explanation of Feelings:
+                td.title
+                    strong Ideas for Improvement:
+                td.title
+                    strong Stand-out Moments:
 
             each post in posts
                 tr
@@ -50,6 +50,6 @@ html(lang='en')
                         a(href="#") #{post.createdAt}
                     td #{post.feelings}
                     td #{post.firstThought}
-                //    td #{post.whyFeel}
-                //    td #{post.better}
-                //    td #{post.standsOut}
+                    td #{post.whyFeel}
+                    td #{post.better}
+                    td #{post.standsOut}
