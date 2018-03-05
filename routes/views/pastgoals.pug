@@ -34,13 +34,12 @@ html(lang='en')
         h2 In Progress
         each goal, ind in goals
           if !goal.completed
-            div.goal-card(id=ind, draggable='true', ondragstart="drag(event)")
+            div.goal-card(id=ind, draggable='true', ondragstart="drag(event,'"+goal.reward+"')")
               p Goal: #{goal.goal}
               p Duration: #{goal.duration}
       div.goals-list(id="completed", ondrop="drop(event)", ondragover="allowDrop(event)")
         h2 Completed
         each goal, ind in goals
           if goal.completed
-            div.goal-card(id=ind, draggable='true', ondragstart="drag(event)")
-              p Goal: #{goal.goal}
-              p Duration: #{goal.duration}
+            div.goal-card(id=ind, draggable='true', ondragstart="drag(event,'"+goal.reward+"')")
+              p Reward: #{goal.reward}

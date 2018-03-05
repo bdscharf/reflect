@@ -20,7 +20,6 @@ router.post("/", (req, res, next) =>
 	{
 		var dtype = "goal";
 		req.body['completed'] = false;
-		console.log(req.session.username, dtype, req.body);
 		queries.writeData(req.session.username, dtype, req.body, (success) =>
 		{
 			if (!success)
