@@ -16,20 +16,26 @@ router.get("/", (req, res, next) => {
 
 router.post("/", (req, res, next) =>
 {
-	var dtype = "goal";
-	queries.writeData(req.session.username, dtype, req.body, (success) =>
+	if ('goal' in req.body)
 	{
-		if (!success)
+		var dtype = "goal";
+		req.body['completed'] = false;
+		console.log(req.session.username, dtype, req.body);
+		queries.writeData(req.session.username, dtype, req.body, (success) =>
 		{
-			console.log("ALERT: Failed to write new journal entry.");
-			res.redirect('/newgoal');
-		}
-		else
-		{
-			res.redirect('/pastgoals');	
-		}
-	});
-	res.redirect('/history');
+			if (!success)
+			{
+				console.log("ALERT: Failed to submit new goal.");
+				res.redirect('/newgoal');
+			}
+			else
+			{
+				res.redirect('/pastgoals');
+			}
+		});
+	} else {
+		res.redirect('/home');
+	}
 });
 
 module.exports = router;

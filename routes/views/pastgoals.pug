@@ -12,6 +12,8 @@ html(lang='en')
     title Reflect
     link(rel='stylesheet', href='/stylesheets/base.css')
     link(rel='stylesheet', href='/stylesheets/history.css')
+    link(rel='stylesheet', href='/stylesheets/goal.css')
+    script(src='/scripts/dragdrop.js')
   body
     nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
       ul.navbar-nav
@@ -27,28 +29,18 @@ html(lang='en')
           .dropdown-menu.dropdown-menu-right
             a.dropdown-item(href='/logout') Log Out
 
-    .post-table
-      table
-        tbody
-            tr
-                td
-                    strong Created At:
-                td
-                    strong Feelings:
-                td
-                    strong First Thoughts:
-                td
-                    strong Explanation of Feelings:
-                td
-                    strong Ideas for Improvement:
-                td
-                    strong Stand-out Moments:
-
-            each post in posts
-                tr
-                    td #{post.createdAt}
-                    td #{post.feelings}
-                    td #{post.firstThought}
-                    td #{post.whyFeel}
-                    td #{post.better}
-                    td #{post.standsOut}
+    div.goal-lists
+      div.goals-list(id="in-progress", ondrop="drop(event)", ondragover="allowDrop(event)")
+        h2 In Progress
+        each goal, ind in goals
+          if !goal.completed
+            div.goal-card(id=ind, draggable='true', ondragstart="drag(event)")
+              p Goal: #{goal.goal}
+              p Duration: #{goal.duration}
+      div.goals-list(id="completed", ondrop="drop(event)", ondragover="allowDrop(event)")
+        h2 Completed
+        each goal, ind in goals
+          if goal.completed
+            div.goal-card(id=ind, draggable='true', ondragstart="drag(event)")
+              p Goal: #{goal.goal}
+              p Duration: #{goal.duration}

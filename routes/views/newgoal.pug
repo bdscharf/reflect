@@ -9,14 +9,15 @@ html(lang='en')
         script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js')
         link(href='https://use.fontawesome.com/releases/v5.0.6/css/all.css', rel='stylesheet')
         link(href='https://fonts.googleapis.com/css?family=Lato', rel='stylesheet')
+        // <link rel="shortuct icon" type="image/png" href="/stylesheets/brain.ico"/>
         title Reflect
         link(rel='stylesheet', href='/stylesheets/base.css')
-        link(rel='stylesheet', href='/stylesheets/home.css')
+        link(rel='stylesheet', href='/stylesheets/journal.css')
     body
         nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
             ul.navbar-nav
                 li.navbar-brand
-                    a.navbar-brand(href='/home') reflect
+                    a.navbar-brand(href='home') reflect
             ul.navbar-nav.ml-auto
                 li.nav-item
                     a.nav-link(href='/history') Past Posts
@@ -26,14 +27,15 @@ html(lang='en')
                     a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') #{user.username}
                     .dropdown-menu.dropdown-menu-right
                         a.dropdown-item(href='/logout') Log Out
-        .content
-            h2#welcome-back Welcome back, #{user.username}
-            br
-        .content
-            h3 What would you like to do?
-            .button-row
-                a.button(href='/journal') New Journal Entry
-                a.button(href='/mood') Record Mood
-                a.button(href='/newgoal') Set a Goal
-            br
-            p.definition reflect : re·flect  \ ri-ˈflekt \ verb \ : to think deeply or carefully about.
+        .form-content
+            form.form-feeling(method='POST', action='/newgoal')
+                p.title New Goal
+                p.directions Fill in all fields.
+                br
+                p.question What's something you want to work on? Why this thing in particular?
+                br
+                textarea.question-box(name='goal', required='')  
+                p.question How long do you think it will take to accomplish this?
+                br
+                textarea.question-box(name='duration', required='')
+                button.btn.btn-success.btn-lg(type='submit') Save

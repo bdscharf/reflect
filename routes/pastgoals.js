@@ -6,7 +6,12 @@ var queries = require(path.join('../lib/queries'));
 router.get("/", (req, res, next) => {
 	if (req.session && req.session.loggedIn)
 	{
-		res.render('pastgoals', {user : req.session});
+		queries.getGoals(req.session.username, (goals) => {
+			res.render('pastgoals', {
+				user : req.session,
+				goals: goals
+			});
+		});
 	}
 	else
 	{
