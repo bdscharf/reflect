@@ -18,7 +18,6 @@ router.post("/", (req, res, next) =>
 {
 	if ('goal' in req.body)
 	{
-		console.log(req.body.goal);
 		queries.writeGoal(req.session.username, req.body.duration, req.body.goal, (success) =>
 		{
 			if (!success)
