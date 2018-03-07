@@ -13,5 +13,6 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
     var timestamp =document.getElementById(data).getAttribute('value');
     var newStatus = document.getElementById(data).parentElement.id;
-    var sendString = timestamp + "/" + newStatus;
+    // redirect to feed information to the server
+	window.location.replace("/pastgoals?ts=" + timestamp + "&status=" + newStatus);
 }
