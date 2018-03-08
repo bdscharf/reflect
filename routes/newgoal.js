@@ -18,9 +18,7 @@ router.post("/", (req, res, next) =>
 {
 	if ('goal' in req.body)
 	{
-		var dtype = "goal";
-		req.body['completed'] = false;
-		queries.writeData(req.session.username, dtype, req.body, (success) =>
+		queries.writeGoal(req.session.username, req.body.duration, req.body.goal, req.body.reward, (success) =>
 		{
 			if (!success)
 			{

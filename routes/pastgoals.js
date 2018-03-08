@@ -4,14 +4,31 @@ var path = require('path');
 var queries = require(path.join('../lib/queries'));
 
 router.get("/", (req, res, next) => {
+	// user log-in check
 	if (req.session && req.session.loggedIn)
 	{
-		queries.getGoals(req.session.username, (goals) => {
-			res.render('pastgoals', {
-				user : req.session,
-				goals: goals
+		// check if goal has been moved
+		if (req.query.ts && req.query.status)
+		{
+			queries.updateGoal(req.session.username, req.query.ts, req.query.status, (success) =>
+			{
+				if (!success)
+				{
+					console.log("ALERT: Failed to update goal status.");
+				}
+				res.redirect('/pastgoals');
+				// redirect after db adjustment to have page rendered
 			});
-		});
+		}
+		else // if goal hasn't just been moved, render page
+		{
+			queries.getGoals(req.session.username, (goals) => {
+				res.render('pastgoals', {
+					user : req.session,
+					goals: goals
+				});
+			});
+		}
 	}
 	else
 	{

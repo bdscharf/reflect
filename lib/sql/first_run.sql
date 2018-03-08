@@ -23,3 +23,12 @@ CREATE TABLE mm_dev.user_data(
 	type VARCHAR,
 	data JSONB
 );
+
+CREATE TABLE mm_dev.goals(
+	username VARCHAR NOT NULL,
+	created_at VARCHAR,
+	duration VARCHAR,
+	in_progress boolean,
+	goal VARCHAR,
+	reward VARCHAR
+);
