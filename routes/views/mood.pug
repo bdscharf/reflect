@@ -13,6 +13,7 @@ html(lang='en')
         title Reflect
         link(rel='stylesheet', href='/stylesheets/base.css')
         link(rel='stylesheet', href='/stylesheets/journal.css')
+        link(rel='stylesheet', href='/stylesheets/mood.css')
     body
         nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
             ul.navbar-nav
@@ -37,7 +38,7 @@ html(lang='en')
                 textarea.question-box(required='')
                 p.question How many hours of sleep did you get last night?
                 br
-                textarea.question-box(required='')
+                input.number-box(required='', type='number', min='0')
                 p.question How would you describe your diet today?
                 br
                 textarea.question-box(required='')
