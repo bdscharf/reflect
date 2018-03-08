@@ -86,6 +86,8 @@ var journal = require('./routes/journal');
 var logout = require('./routes/logout');
 var history = require('./routes/history');
 var mood = require('./routes/mood');
+var newgoal = require('./routes/newgoal');
+var pastgoals = require('./routes/pastgoals');
 
 app.use('/', index);
 app.use('/signup', signup);
@@ -94,6 +96,8 @@ app.use('/journal', journal);
 app.use('/logout', logout);
 app.use('/history', history);
 app.use('/mood', mood);
+app.use('/newgoal', newgoal);
+app.use('/pastgoals', pastgoals);
 
 /*
 	Express error-catching set-up:

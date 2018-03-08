@@ -1,8 +1,10 @@
-# mentalmindfulness
-EECS330 Human-Computer Interaction project.
+# reflect
+Dive deep into patterns of thought and emotion with ['reflect.'](https://reflect365.herokuapp.com/)
+
+EECS 330 HCI Project.
 
 ## Purpose:
-Help users develop healthy patterns of thought.
+Help users develop healthy patterns of thought and emotion.
 
 ## Components:
 1) User Profiles

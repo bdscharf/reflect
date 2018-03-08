@@ -12,6 +12,9 @@ html(lang='en')
     title Reflect
     link(rel='stylesheet', href='/stylesheets/base.css')
     link(rel='stylesheet', href='/stylesheets/history.css')
+    link(rel='stylesheet', href='/stylesheets/goal.css')
+    script(src='/scripts/dragdrop.js')
+
   body
     nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
       ul.navbar-nav
@@ -27,34 +30,22 @@ html(lang='en')
           .dropdown-menu.dropdown-menu-right
             a.dropdown-item(href='/logout') Log Out
 
-    .post-table
-      table
-        - var empty = posts.length < 1
-        if empty
-            div.error You have not posted yet!
-            a.error(href='/journal') [Click here to write a new post]
-        else
-            tbody
-                tr
-                    td.date.title
-                        strong Date Posted:
-                    td.title
-                        strong Feeling(s):
-                    td.thoughts.title
-                        strong First Thoughts:
-                    td.title
-                        strong Explanation of Feelings:
-                    td.title
-                        strong Ideas for Improvement:
-                    td.title
-                        strong Stand-out Moments:
-
-                each post in posts
-                    tr
-                        td 
-                            a(href="#") #{post.createdAt}
-                        td #{post.feelings}
-                        td #{post.firstThought}
-                        td #{post.whyFeel}
-                        td #{post.better}
-                        td #{post.standsOut}
+    div.goal-lists
+      div.goals-list(id="in-progress", ondrop="drop(event)", ondragover="allowDrop(event)")
+        h2 In Progress
+        each goal, ind in goals
+          if goal.in_progress
+            - var timestamp = goal.timestamp
+            div.goal-card(id=ind, draggable='true', value=timestamp, ondragstart="drag(event)")
+              p Goal: #{goal.goal}
+              p Created on: #{goal.createdAt}
+              p Duration: #{goal.duration}
+      div.goals-list(id="completed", ondrop="drop(event)", ondragover="allowDrop(event)")
+        h2 Completed
+        each goal, ind in goals
+          if !goal.in_progress
+            - var timestamp = goal.timestamp
+            div.goal-card(id=ind, draggable='true', value=timestamp, ondragstart="drag(event)")
+              p Goal: #{goal.goal}
+              p Created on: #{goal.createdAt}
+              p Reward: #{goal.reward}
