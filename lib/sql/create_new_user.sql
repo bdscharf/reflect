@@ -1,4 +1,4 @@
-INSERT INTO mm_dev.users(
+INSERT INTO {SCHEMA}.users(
 	fullname,
 	username,
 	password,

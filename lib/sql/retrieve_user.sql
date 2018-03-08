@@ -1,2 +1,2 @@
-SELECT * FROM mm_dev.users
+SELECT * FROM {SCHEMA}.users
 WHERE username = $1;

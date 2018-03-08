@@ -1,15 +1,15 @@
-DROP SCHEMA IF EXISTS mm_dev CASCADE;
-CREATE SCHEMA mm_dev;
+DROP SCHEMA IF EXISTS {SCHEMA} CASCADE;
+CREATE SCHEMA {SCHEMA};
 
-CREATE SEQUENCE mm_dev.user_id
+CREATE SEQUENCE {SCHEMA}.user_id
 	INCREMENT 1
 	MINVALUE 1
     MAXVALUE 10000
     START 1
     CACHE 1;
 
-CREATE TABLE mm_dev.users(
-	user_id INT NOT NULL DEFAULT nextval('mm_dev.user_id'::regclass),
+CREATE TABLE {SCHEMA}.users(
+	user_id INT NOT NULL DEFAULT nextval('{SCHEMA}.user_id'::regclass),
 	fullname VARCHAR,
 	username VARCHAR,
 	password VARCHAR,
@@ -17,14 +17,14 @@ CREATE TABLE mm_dev.users(
 	CONSTRAINT uniq_username UNIQUE (username)
 );
 
-CREATE TABLE mm_dev.user_data(
+CREATE TABLE {SCHEMA}.user_data(
 	username VARCHAR NOT NULL,
 	created_at timestamp with time zone,
 	type VARCHAR,
 	data JSONB
 );
 
-CREATE TABLE mm_dev.goals(
+CREATE TABLE {SCHEMA}.goals(
 	username VARCHAR NOT NULL,
 	created_at VARCHAR,
 	duration VARCHAR,

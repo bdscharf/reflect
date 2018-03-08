@@ -1,2 +1,2 @@
-SELECT * FROM mm_dev.goals
+SELECT * FROM {SCHEMA}.goals
 WHERE username = $1;
