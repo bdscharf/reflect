@@ -18,7 +18,7 @@ router.post("/", (req, res, next) =>
 {
 	if ('goal' in req.body)
 	{
-		queries.writeGoal(req.session.username, req.body.duration, req.body.goal, (success) =>
+		queries.writeGoal(req.session.username, req.body.duration, req.body.goal, req.body.reward, (success) =>
 		{
 			if (!success)
 			{
