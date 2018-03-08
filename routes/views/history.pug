@@ -29,27 +29,32 @@ html(lang='en')
 
     .post-table
       table
-        tbody
-            tr
-                td.date.title
-                    strong Date Posted:
-                td.title
-                    strong Feeling(s):
-                td.thoughts.title
-                    strong First Thoughts:
-                td.title
-                    strong Explanation of Feelings:
-                td.title
-                    strong Ideas for Improvement:
-                td.title
-                    strong Stand-out Moments:
-
-            each post in posts
+        - var empty = posts.length < 1
+        if empty
+            div.error You have not posted yet!
+            a.error(href='/journal') [Click here to write a new post]
+        else
+            tbody
                 tr
-                    td 
-                        a(href="#") #{post.createdAt}
-                    td #{post.feelings}
-                    td #{post.firstThought}
-                    td #{post.whyFeel}
-                    td #{post.better}
-                    td #{post.standsOut}
+                    td.date.title
+                        strong Date Posted:
+                    td.title
+                        strong Feeling(s):
+                    td.thoughts.title
+                        strong First Thoughts:
+                    td.title
+                        strong Explanation of Feelings:
+                    td.title
+                        strong Ideas for Improvement:
+                    td.title
+                        strong Stand-out Moments:
+
+                each post in posts
+                    tr
+                        td 
+                            a(href="#") #{post.createdAt}
+                        td #{post.feelings}
+                        td #{post.firstThought}
+                        td #{post.whyFeel}
+                        td #{post.better}
+                        td #{post.standsOut}
