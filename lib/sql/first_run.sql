@@ -29,5 +29,6 @@ CREATE TABLE mm_dev.goals(
 	created_at VARCHAR,
 	duration VARCHAR,
 	in_progress boolean,
-	goal VARCHAR
+	goal VARCHAR,
+	reward VARCHAR
 );
