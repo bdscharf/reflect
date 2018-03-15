@@ -5,7 +5,7 @@ var queries = require(path.join('../lib/queries'));
 var rewards = require(path.join('../lib/rewards'));
 
 router.get('/', (req, res, next) => {
-  if (req.session && req.session.loggedIn)
+  if (typeof(req.session.username) != "undefined" && req.session.loggedIn)
   {
     res.redirect('/home');
   }

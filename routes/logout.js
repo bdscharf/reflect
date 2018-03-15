@@ -4,7 +4,8 @@ var path = require('path');
 
 router.get("/", (req, res, next) => {
 	console.log("ALERT: Logging out...");
-	delete req.session.user;
+	delete req.session.username;
+	delete req.session;
 	res.redirect('/');
 });
 
