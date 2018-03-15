@@ -5,7 +5,14 @@ var queries = require(path.join('../lib/queries'));
 var rewards = require(path.join('../lib/rewards'));
 
 router.get('/', (req, res, next) => {
-  res.sendFile(path.join(__dirname + '/views/index.html'));
+  if (req.session)
+  {
+    res.redirect('/home');
+  }
+  else
+  {
+    res.sendFile(path.join(__dirname + '/views/index.html'));
+  }
 });
 
 router.post('/', (req, res, next) => {
