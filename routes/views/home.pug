@@ -29,6 +29,11 @@ html(lang='en')
         .content
             h2#welcome-back Welcome back, #{user.username}
             br
+            .progress
+                - var prog = Math.ceil((level % 1) * 100)
+                .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%')
+
+            br
         .content
             h3 What would you like to do?
             .button-row
