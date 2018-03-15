@@ -14,6 +14,10 @@ CREATE TABLE {SCHEMA}.users(
 	username VARCHAR,
 	password VARCHAR,
 	last_login timestamp without time zone,
+	level numeric,
+	logins integer,
+	posts integer,
+	goals integer,
 	CONSTRAINT uniq_username UNIQUE (username)
 );
 
