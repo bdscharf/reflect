@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var queries = require(path.join('../lib/queries'));
+var rewards = require(path.join('../lib/rewards'));
 
 router.get("/", (req, res, next) => {
 	// user log-in check
@@ -17,6 +18,7 @@ router.get("/", (req, res, next) => {
 					console.log("ALERT: Failed to update goal status.");
 				}
 				res.redirect('/pastgoals');
+				req.session.goals ++;
 				// redirect after db adjustment to have page rendered
 			});
 		}
@@ -29,6 +31,7 @@ router.get("/", (req, res, next) => {
 				});
 			});
 		}
+		rewards.changeLevel(req.session.username, req.session.level, req.session.logins, req.session.posts, req.session.goals);
 	}
 	else
 	{

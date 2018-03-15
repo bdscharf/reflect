@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var queries = require(path.join('../lib/queries'));
+var rewards = require(path.join('../lib/rewards'));
 
 router.get("/", (req, res, next) => {
 	res.sendFile(path.join(__dirname + '/views/signup.html'));
@@ -23,6 +24,9 @@ router.post("/", (req, res, next) => {
 			{
 				req.session.username = data.username;
 				req.session.loggedIn = true;
+				req.session.logins = 1;
+				req.session.posts = 0;
+				req.session.goals = 0;
 				res.redirect('/home');
 			}
 			else

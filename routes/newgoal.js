@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 var queries = require(path.join('../lib/queries'));
+var rewards = require(path.join('../lib/rewards'));
+
 
 router.get("/", (req, res, next) => {
 	if (req.session && req.session.loggedIn)
@@ -28,6 +30,8 @@ router.post("/", (req, res, next) =>
 			else
 			{
 				res.redirect('/pastgoals');
+				req.session.goals ++;
+				rewards.changeLevel(req.session.username, req.session.level, req.session.logins, req.session.posts, req.session.goals);
 			}
 		});
 	} else {
