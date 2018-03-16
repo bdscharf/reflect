@@ -13,13 +13,14 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/base.css')
     link(rel='stylesheet', href='/stylesheets/history.css')
     link(rel='stylesheet', href='/stylesheets/achievement.css')
-      
+
   body
     .achievement-container
       div#achievement
         .circle
         .copy
           h4
+
     nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
       ul.navbar-nav
         li.navbar-brand
@@ -37,40 +38,77 @@ html(lang='en')
               - var current = Math.floor(level)
               p level #{current}
               .progress
-                  .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
+                .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
             a.dropdown-item(href='/logout') Log Out
 
     .post-table
+      h2 Journal
+      br
       table
-        - var empty = posts.length < 1
+        - var empty = journalPosts.length < 1
         if empty
-            div.error You have not posted yet!
-            a.error(href='/journal') [Click here to write a new post]
+          div.error You have not posted Journal yet!
+          a.error(href='/journal') [Click here to write a new post]
         else
-            tbody
-                tr
-                    td.date.title
-                        strong Date Posted:
-                    td.title
-                        strong Feeling(s):
-                    td.thoughts.title
-                        strong First Thoughts:
-                    td.title
-                        strong Explanation of Feelings:
-                    td.title
-                        strong Ideas for Improvement:
-                    td.title
-                        strong Stand-out Moments:
+          tbody
+            tr
+              td.date.title
+                strong Date Posted:
+              td.title
+                strong Feeling(s):
+              td.thoughts.title
+                strong First Thoughts:
+              td.title
+                strong Explanation of Feelings:
+              td.title
+                strong Ideas for Improvement:
+              td.title
+                strong Stand-out Moments:
 
-                each post in posts
-                    tr
-                        td 
-                            a(href="#") #{post.createdAt}
-                        td #{post.feelings}
-                        td #{post.firstThought}
-                        td #{post.whyFeel}
-                        td #{post.better}
-                        td #{post.standsOut}
+            each post in journalPosts
+              tr
+                td 
+                  a(href="#") #{post.createdAt}
+                td #{post.feelings}
+                td #{post.firstThought}
+                td #{post.whyFeel}
+                td #{post.better}
+                td #{post.standsOut}
+
+    .post-table
+      h2 Mood
+      br
+      table
+        - var empty = moodPosts.length < 1
+        if empty
+          div.error You have not posted Mood yet!
+          a.error(href='/mood') [Click here to write a new post]
+        else
+          tbody
+            tr
+              td.date.title
+                strong Date Posted:
+              td.title
+                strong Hours Slept:
+              td.thoughts.title
+                strong Today:
+              td.title
+                strong Diet:
+              td.title
+                strong Exercise:
+              td.title
+                strong Leisure:
+
+            each post in moodPosts
+              tr
+                td 
+                  a(href="#") #{post.createdAt}
+                td #{post.hours}
+                td #{post.today}
+                td #{post.diet}
+                td #{post.exercise}
+                td #{post.leisure}
+
     script(src='/scripts/achievement.js')
     if achievementMessage
       script showAchievement("#{achievementMessage}")

@@ -35,25 +35,25 @@ html(lang='en')
                             .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
                       a.dropdown-item(href='/logout') Log Out
         .form-content
-            form.form-feeling(action='/mood', method="POST")
+            form.form-feeling(method="POST", action='/mood')
                 p.title Mood Tracker
                 p.directions Fill in all fields.
                 br
-                p.question Sum up today in a sentence or two:
+                p.question(required) Sum up today in a sentence or two:
                 br
-                textarea.question-box(required)
+                textarea.question-box(name="today", required)
                 p.question How many hours of sleep did you get last night?
                 br
-                input.number-box(required, type='number', min='0')
+                input.number-box(name="hours", required, type='number', min='0')
                 p.question How would you describe your diet today?
                 br
-                textarea.question-box(required)
+                textarea.question-box(name="diet", required)
                 p.question Did you exercise today? If yes, for how long?
                 br
-                textarea.question-box(required)
+                textarea.question-box(name="exercise", required)
                 br
                 p.question Describe today's leisure time. What did you spend it doing?
                 br
-                textarea.question-box(required)
+                textarea.question-box(name="leisure", required)
                 br
                 button.btn.btn-success.btn-lg(type='submit') Save

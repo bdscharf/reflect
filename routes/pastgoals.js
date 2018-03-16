@@ -27,6 +27,7 @@ router.get("/", (req, res, next) => {
 			queries.getGoals(req.session.username, (goals) => {
 				res.render('pastgoals', {
 					user : req.session,
+					level: req.session.level,
 					goals: goals,
 					achievementMessage: req.session.achievementMessage,
 					displayed: function() {
