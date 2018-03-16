@@ -28,9 +28,11 @@ router.post("/", (req, res, next) =>
 		}
 		else
 		{
+			req.session.achievementMessage = "New Mood +10xp";
+			console.log(req.session);
 			res.redirect('/history');
-			req.session.posts ++;
-			rewards.changeLevel(req.session.username, req.session.level, req.session.logins, req.session.posts, req.session.goals);	
+			req.session.posts++;
+			rewards.changeLevel(req.session.username, req.session.level, req.session.logins, req.session.posts, req.session.goals);
 		}
 	});
 });

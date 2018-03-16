@@ -10,7 +10,11 @@ router.get("/", (req, res, next) => {
 		{
 			res.render('history', {
 				user : req.session,
-				posts : userData
+				posts : userData,
+				achievementMessage: req.session.achievementMessage,
+				displayed: function() {
+					req.session.achievementMessage = "";
+				}
 			});
 		});
 	}
@@ -21,4 +25,3 @@ router.get("/", (req, res, next) => {
 });
 
 module.exports = router;
-

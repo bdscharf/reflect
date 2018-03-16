@@ -27,8 +27,13 @@ router.get("/", (req, res, next) => {
 			queries.getGoals(req.session.username, (goals) => {
 				res.render('pastgoals', {
 					user : req.session,
-					goals: goals
+					goals: goals,
+					achievementMessage: req.session.achievementMessage,
+					displayed: function() {
+						req.session.achievementMessage = "";
+					}
 				});
+				console.log(req.session);
 			});
 		}
 		rewards.changeLevel(req.session.username, req.session.level, req.session.logins, req.session.posts, req.session.goals);

@@ -34,6 +34,7 @@ router.post("/", (req, res, next) => {
 			}
 			else
 			{
+				req.session.achievementMessage = "Journal Entry +10xp";
 				res.redirect('/history');
 			}
 		});

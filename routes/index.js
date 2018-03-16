@@ -33,8 +33,9 @@ router.post('/', (req, res, next) => {
       if (responseData.loggedIn) {
         req.session.username = responseData.username;
         req.session.loggedIn = true;
-        req.session.level = responseData.level;
+        req.session.level = responseData.level ?  responseData.level : 1;
         req.session.logins = responseData.logins + 1;
+        req.session.achievementMessage = "Daily Login +10xp";
         // increment login
         req.session.posts = responseData.posts;
         req.session.goals = responseData.goals;

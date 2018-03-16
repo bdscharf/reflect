@@ -25,7 +25,13 @@ html(lang='en')
                 li.nav-item.dropdown
                     a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') #{user.username}
                     .dropdown-menu.dropdown-menu-right
-                        a.dropdown-item(href='/logout') Log Out
+                      .level
+                        - var prog = Math.ceil((level % 1) * 100)
+                        - var current = Math.floor(level)
+                        p level #{current}
+                        .progress
+                            .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
+                      a.dropdown-item(href='/logout') Log Out
         .form-content
             form.form-feeling(method='POST', action='/journal')
                 p.title New Journal Entry
@@ -69,16 +75,16 @@ html(lang='en')
                 br
                 p.question What are your first thoughts about today? Are they mostly positive or negative?
                 br
-                textarea.question-box(name='firstthoughts', required='')
+                textarea.question-box(name='firstthoughts', required)
                 p.question Explain why you're currently feeling what you marked.
                 br
-                textarea.question-box(name='whyfeeling', required='')
+                textarea.question-box(name='whyfeeling', required)
                 p.question What would make today better?
                 br
-                textarea.question-box(name='whatbetter', required='')
+                textarea.question-box(name='whatbetter', required)
                 p.question What stands out about today?
                 br
-                textarea.question-box(name='standout', required='')
+                textarea.question-box(name='standout', required)
                 br
                 button.btn.btn-success.btn-lg(type='submit') Save
 

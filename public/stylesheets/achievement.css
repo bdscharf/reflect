@@ -1,0 +1,95 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+#achievement {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  transform: scale(0);
+  transition: 250ms ease-in-out;
+  box-shadow: 0 3px 10px #1E7195;
+}
+#achievement.expand {
+  transform: scale(1);
+}
+#achievement.expand .circle:before {
+  animation: rotate 400ms linear;
+}
+#achievement.expand.widen {
+  width: 240px;
+  border-radius: 30px;
+}
+#achievement .circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #28a745;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+#achievement .circle:before {
+  font-size: 30px;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+  color: #fff;
+  position: absolute;
+  top: 7px;
+  left: 6.5px;
+  transform: scale(1);
+  transition: 250ms ease-in-out;
+}
+#achievement .circle.rotate:before {
+  animation: rotateBack 400ms linear;
+}
+#achievement .copy {
+  opacity: 0;
+  transition: 250ms ease-in-out;
+  width: 160px;
+  position: absolute;
+  left: 60px;
+  top: 10px;
+}
+#achievement .copy.show {
+  opacity: 1;
+  top: 20px;
+}
+#achievement .copy h4 {
+  font-size: 18px;
+  margin: 0;
+}
+.refresh {
+  display: none;
+  text-align: center;
+  color: #fff;
+  text-decoration: underline;
+  font-size: 18px;
+  cursor: pointer;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateBack {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.achievement-container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  top: 20px;
+  z-index: 1000000;
+  pointer-events: none;
+}

@@ -13,9 +13,15 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/base.css')
     link(rel='stylesheet', href='/stylesheets/history.css')
     link(rel='stylesheet', href='/stylesheets/goal.css')
+    link(rel='stylesheet', href='/stylesheets/achievement.css')
     script(src='/scripts/dragdrop.js')
 
   body
+    .achievement-container
+      div#achievement
+        .circle
+        .copy
+          h4
     nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
       ul.navbar-nav
         li.navbar-brand
@@ -28,6 +34,12 @@ html(lang='en')
         li.nav-item.dropdown
           a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') #{user.username}
           .dropdown-menu.dropdown-menu-right
+            .level
+              - var prog = Math.ceil((level % 1) * 100)
+              - var current = Math.floor(level)
+              p level #{current}
+              .progress
+                .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
             a.dropdown-item(href='/logout') Log Out
 
     div.goal-lists
@@ -49,3 +61,7 @@ html(lang='en')
               p Goal: #{goal.goal}
               p Created on: #{goal.createdAt}
               p Reward: #{goal.reward}
+    script(src='/scripts/achievement.js')
+    if achievementMessage
+      script showAchievement("#{achievementMessage}")
+      - displayed()

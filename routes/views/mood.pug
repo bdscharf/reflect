@@ -27,27 +27,33 @@ html(lang='en')
                 li.nav-item.dropdown
                     a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') #{user.username}
                     .dropdown-menu.dropdown-menu-right
-                        a.dropdown-item(href='/logout') Log Out
+                      .level
+                        - var prog = Math.ceil((level % 1) * 100)
+                        - var current = Math.floor(level)
+                        p level #{current}
+                        .progress
+                            .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
+                      a.dropdown-item(href='/logout') Log Out
         .form-content
-            form.form-feeling(action='/home')
+            form.form-feeling(action='/mood', method="POST")
                 p.title Mood Tracker
                 p.directions Fill in all fields.
                 br
                 p.question Sum up today in a sentence or two:
                 br
-                textarea.question-box(required='')
+                textarea.question-box(required)
                 p.question How many hours of sleep did you get last night?
                 br
-                input.number-box(required='', type='number', min='0')
+                input.number-box(required, type='number', min='0')
                 p.question How would you describe your diet today?
                 br
-                textarea.question-box(required='')
+                textarea.question-box(required)
                 p.question Did you exercise today? If yes, for how long?
                 br
-                textarea.question-box(required='')
+                textarea.question-box(required)
                 br
                 p.question Describe today's leisure time. What did you spend it doing?
                 br
-                textarea.question-box(required='')
+                textarea.question-box(required)
                 br
                 button.btn.btn-success.btn-lg(type='submit') Save

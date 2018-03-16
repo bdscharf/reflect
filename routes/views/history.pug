@@ -12,7 +12,14 @@ html(lang='en')
     title Reflect
     link(rel='stylesheet', href='/stylesheets/base.css')
     link(rel='stylesheet', href='/stylesheets/history.css')
+    link(rel='stylesheet', href='/stylesheets/achievement.css')
+      
   body
+    .achievement-container
+      div#achievement
+        .circle
+        .copy
+          h4
     nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
       ul.navbar-nav
         li.navbar-brand
@@ -25,6 +32,12 @@ html(lang='en')
         li.nav-item.dropdown
           a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') #{user.username}
           .dropdown-menu.dropdown-menu-right
+            .level
+              - var prog = Math.ceil((level % 1) * 100)
+              - var current = Math.floor(level)
+              p level #{current}
+              .progress
+                  .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
             a.dropdown-item(href='/logout') Log Out
 
     .post-table
@@ -58,3 +71,7 @@ html(lang='en')
                         td #{post.whyFeel}
                         td #{post.better}
                         td #{post.standsOut}
+    script(src='/scripts/achievement.js')
+    if achievementMessage
+      script showAchievement("#{achievementMessage}")
+      - displayed()

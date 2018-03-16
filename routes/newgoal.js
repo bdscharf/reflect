@@ -29,6 +29,7 @@ router.post("/", (req, res, next) =>
 			}
 			else
 			{
+				req.session.achievementMessage = "New Goal +10xp";
 				res.redirect('/pastgoals');
 				req.session.goals ++;
 				rewards.changeLevel(req.session.username, req.session.level, req.session.logins, req.session.posts, req.session.goals);
