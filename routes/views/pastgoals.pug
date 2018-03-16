@@ -22,6 +22,7 @@ html(lang='en')
         .circle
         .copy
           h4
+
     nav.navbar.navbar-expand-sm.bg-success.navbar-dark.fixed-top
       ul.navbar-nav
         li.navbar-brand
@@ -49,18 +50,24 @@ html(lang='en')
           if goal.in_progress
             - var timestamp = goal.timestamp
             div.goal-card(id=ind, draggable='true', value=timestamp, ondragstart="drag(event)")
-              p Goal: #{goal.goal}
-              p Created on: #{goal.createdAt}
-              p Duration: #{goal.duration}
+              h3 Goal: #{goal.goal}
+              p Complete By: #{goal.duration}
+              p Reward: #{goal.reward}
+              br
+              p.date Created On:#{goal.createdAt}
+
       div.goals-list(id="completed", ondrop="drop(event)", ondragover="allowDrop(event)")
         h2 Completed
         each goal, ind in goals
           if !goal.in_progress
             - var timestamp = goal.timestamp
             div.goal-card(id=ind, draggable='true', value=timestamp, ondragstart="drag(event)")
+              h3 Reward: #{goal.reward}
               p Goal: #{goal.goal}
-              p Created on: #{goal.createdAt}
-              p Reward: #{goal.reward}
+              p Complete By: #{goal.duration}
+              br
+              p.date Created On:#{goal.createdAt}
+
     script(src='/scripts/achievement.js')
     if achievementMessage
       script showAchievement("#{achievementMessage}")
