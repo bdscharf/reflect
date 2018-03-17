@@ -39,8 +39,8 @@ router.post('/', (req, res, next) => {
         // increment login
         req.session.posts = responseData.posts;
         req.session.goals = responseData.goals;
-        res.redirect('/home');
         rewards.changeLevel(req.session.username, req.session.level, req.session.logins, req.session.posts, req.session.goals);
+        res.redirect('/home');
       } else {
         delete req.session;
         res.redirect('/?failedLogin=true');

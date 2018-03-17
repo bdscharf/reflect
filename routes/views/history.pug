@@ -47,7 +47,7 @@ html(lang='en')
       table
         - var empty = journalPosts.length < 1
         if empty
-          div.error You have not posted Journal yet!
+          div.error You have not created a journal entry yet!
           a.error(href='/journal') [Click here to write a new post]
         else
           tbody
@@ -81,8 +81,8 @@ html(lang='en')
       table
         - var empty = moodPosts.length < 1
         if empty
-          div.error You have not posted Mood yet!
-          a.error(href='/mood') [Click here to write a new post]
+          div.error You have not logged your mood yet!
+          a.error(href='/mood') [Click here to log your mood]
         else
           tbody
             tr
