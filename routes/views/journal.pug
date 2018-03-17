@@ -32,7 +32,7 @@ html(lang='en')
                             p level #{current}
                             .progress
                               .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
-                          else
+                        else
                             p level #{current}, 0%
         .form-content
             form.form-feeling(method='POST', action='/journal')

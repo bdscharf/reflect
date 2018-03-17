@@ -21,6 +21,8 @@ html(lang='en')
             ul.navbar-nav.ml-auto
                 li.nav-item
                     a.nav-link(href='/history') Past Posts
+                li.nav-item
+                    a.nav-link(href='/pastgoals') Goals
                 li.nav-item.dropdown
                     a#navbardrop.nav-link.dropdown-toggle(href='#', data-toggle='dropdown') #{user.username}
                     .dropdown-menu.dropdown-menu-right
@@ -31,7 +33,7 @@ html(lang='en')
                             p level #{current}
                             .progress
                               .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
-                          else
+                        else
                             p level #{current}, 0%
         .form-content
             form.form-feeling(method='POST', action='/newgoal')
