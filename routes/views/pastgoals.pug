@@ -45,30 +45,35 @@ html(lang='en')
               else
                 p level #{current}, 0%
 
-    div.goal-lists
-      div.goals-list(id="in-progress", ondrop="drop(event)", ondragover="allowDrop(event)")
-        h2 In Progress
-        each goal, ind in goals
-          if goal.in_progress
-            - var timestamp = goal.timestamp
-            div.goal-card(id=ind, draggable='true', value=timestamp, ondragstart="drag(event)")
-              h3 Goal: #{goal.goal}
-              p Complete By: #{goal.duration}
-              p Reward: #{goal.reward}
-              br
-              p.date Created On:#{goal.createdAt}
+    if goals.length != 0
+      div.goal-lists
+        div.goals-list(id="in-progress", ondrop="drop(event)", ondragover="allowDrop(event)")
+          h2 In Progress
+          each goal, ind in goals
+            if goal.in_progress
+              - var timestamp = goal.timestamp
+              div.goal-card(id=ind, draggable='true', value=timestamp, ondragstart="drag(event)")
+                h3 Goal: #{goal.goal}
+                p Complete By: #{goal.duration}
+                p Reward: #{goal.reward}
+                br
+                p.date Created On:#{goal.createdAt}
 
-      div.goals-list(id="completed", ondrop="drop(event)", ondragover="allowDrop(event)")
-        h2 Completed
-        each goal, ind in goals
-          if !goal.in_progress
-            - var timestamp = goal.timestamp
-            div.goal-card(id=ind, draggable='true', value=timestamp, ondragstart="drag(event)")
-              h3 Reward: #{goal.reward}
-              p Goal: #{goal.goal}
-              p Complete By: #{goal.duration}
-              br
-              p.date Created On:#{goal.createdAt}
+        div.goals-list(id="completed", ondrop="drop(event)", ondragover="allowDrop(event)")
+          h2 Completed
+          each goal, ind in goals
+            if !goal.in_progress
+              - var timestamp = goal.timestamp
+              div.goal-card(id=ind, draggable='true', value=timestamp, ondragstart="drag(event)")
+                h3 Reward: #{goal.reward}
+                p Goal: #{goal.goal}
+                p Complete By: #{goal.duration}
+                br
+                p.date Created On:#{goal.createdAt}
+    else
+      div.error You have not created a journal entry yet!
+      div.e
+        a.error(href='/newgoal') [Click here to write a new post]
 
     script(src='/scripts/achievement.js')
     if achievementMessage
