@@ -34,9 +34,13 @@ html(lang='en')
             .level
               - var prog = Math.ceil((level % 1) * 100)
               - var current = Math.floor(level)
-              p level #{current}
-              .progress
-                .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
+              if prog != 0
+                p level #{current}
+                .progress
+                  .progress-bar(role='progressbar', aria-valuenow=prog, aria-valuemin='0', aria-valuemax='100', style='width:' + prog + '%') #{prog}%
+              else
+                p level #{current}, 0%
+
             a.dropdown-item(href='/logout') Log Out
     .content
       h2#welcome-back Welcome back, #{user.username}
