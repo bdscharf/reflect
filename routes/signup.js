@@ -11,7 +11,11 @@ router.get("/", (req, res, next) => {
 router.post("/", (req, res, next) => {
 	var data = {fullname : req.body.fullname,
 				username : req.body.username,
-				password : req.body.password};
+				password : req.body.password,
+				level : 1,
+				logins : 1,
+				posts : 0,
+				goals : 0};
 
 	if (data.password.length < 6) {
 		res.redirect('/signup?pLengthErr=true');
