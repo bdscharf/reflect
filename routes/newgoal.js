@@ -8,7 +8,11 @@ var rewards = require(path.join('../lib/rewards'));
 router.get("/", (req, res, next) => {
 	if (req.session && req.session.loggedIn)
 	{
-		res.render('newgoal', {user : req.session, level: req.session.level});
+		queries.getLevel(req.session.username, (ulevel) =>
+		{
+			req.session.level = ulevel;
+			res.render('newgoal', {user : req.session, level: req.session.level});
+		});
 	}
 	else
 	{
