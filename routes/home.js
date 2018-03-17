@@ -6,13 +6,17 @@ var queries = require(path.join('../lib/queries'));
 router.get("/", (req, res, next) => {
 	if (req.session && req.session.loggedIn)
 	{
-		res.render('home', {
-			user : req.session,
-			level: req.session.level,
-			achievementMessage: req.session.achievementMessage,
-			displayed: function() {
-				req.session.achievementMessage = "";
-			}
+		queries.getLevel(req.session.username, (ulevel) =>
+		{
+			req.session.level = ulevel;
+			res.render('home', {
+				user : req.session,
+				level: req.session.level,
+				achievementMessage: req.session.achievementMessage,
+				displayed: function() {
+					req.session.achievementMessage = "";
+				}
+			});
 		});
 	}
 	else
